@@ -124,13 +124,17 @@
         "scale": {
           "domain": [
             0,
+            50,
             100,
+            150,
             200
           ],
           "range": [
-            "#8c510a",
-            "#f6f1e7",
-            "#01665e"
+            "#7a3f06",
+            "#d9a85a",
+            "#f4efe3",
+            "#6fc3b6",
+            "#015a52"
           ],
           "clamp": true
         },
@@ -142,8 +146,10 @@
             150,
             200
           ],
-          "orient": "right",
-          "gradientLength": 160
+          "orient": "bottom",
+          "direction": "horizontal",
+          "gradientLength": 280,
+          "format": "d"
         }
       },
       "tooltip": [

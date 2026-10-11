@@ -1,0 +1,483 @@
+{
+  "concat": [
+    {
+      "title": {
+        "text": "2002-03",
+        "subtitle": "Millennium drought",
+        "anchor": "start",
+        "fontSize": 14,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 330,
+      "height": 300,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0,
+          0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/rain_grid.json"
+          },
+          "transform": [
+            {
+              "calculate": "datum.s0",
+              "as": "pct"
+            }
+          ],
+          "mark": {
+            "type": "square",
+            "size": 30,
+            "strokeWidth": 0,
+            "opacity": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Rain vs usual",
+              "scale": {
+                "domain": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "range": [
+                  "#7a3f06",
+                  "#d9a85a",
+                  "#f4efe3",
+                  "#6fc3b6",
+                  "#015a52"
+                ],
+                "clamp": true
+              },
+              "legend": {
+                "values": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "orient": "bottom",
+                "direction": "horizontal",
+                "gradientLength": 280,
+                "format": "d"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "pct",
+                "title": "% of usual crop-season rain"
+              },
+              {
+                "field": "avg",
+                "title": "Usual Apr-Oct rain (mm)"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/aagis_regions.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "aagis"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8a8478",
+            "strokeWidth": 0.4,
+            "opacity": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2010-11",
+        "subtitle": "Wet in the east, dry in the west",
+        "anchor": "start",
+        "fontSize": 14,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 330,
+      "height": 300,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0,
+          0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/rain_grid.json"
+          },
+          "transform": [
+            {
+              "calculate": "datum.s1",
+              "as": "pct"
+            }
+          ],
+          "mark": {
+            "type": "square",
+            "size": 30,
+            "strokeWidth": 0,
+            "opacity": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Rain vs usual",
+              "scale": {
+                "domain": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "range": [
+                  "#7a3f06",
+                  "#d9a85a",
+                  "#f4efe3",
+                  "#6fc3b6",
+                  "#015a52"
+                ],
+                "clamp": true
+              },
+              "legend": {
+                "values": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "orient": "bottom",
+                "direction": "horizontal",
+                "gradientLength": 280,
+                "format": "d"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "pct",
+                "title": "% of usual crop-season rain"
+              },
+              {
+                "field": "avg",
+                "title": "Usual Apr-Oct rain (mm)"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/aagis_regions.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "aagis"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8a8478",
+            "strokeWidth": 0.4,
+            "opacity": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2018-19",
+        "subtitle": "Drought across the east",
+        "anchor": "start",
+        "fontSize": 14,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 330,
+      "height": 300,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0,
+          0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/rain_grid.json"
+          },
+          "transform": [
+            {
+              "calculate": "datum.s2",
+              "as": "pct"
+            }
+          ],
+          "mark": {
+            "type": "square",
+            "size": 30,
+            "strokeWidth": 0,
+            "opacity": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Rain vs usual",
+              "scale": {
+                "domain": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "range": [
+                  "#7a3f06",
+                  "#d9a85a",
+                  "#f4efe3",
+                  "#6fc3b6",
+                  "#015a52"
+                ],
+                "clamp": true
+              },
+              "legend": {
+                "values": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "orient": "bottom",
+                "direction": "horizontal",
+                "gradientLength": 280,
+                "format": "d"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "pct",
+                "title": "% of usual crop-season rain"
+              },
+              {
+                "field": "avg",
+                "title": "Usual Apr-Oct rain (mm)"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/aagis_regions.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "aagis"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8a8478",
+            "strokeWidth": 0.4,
+            "opacity": 0.7
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2022-23",
+        "subtitle": "A wet year",
+        "anchor": "start",
+        "fontSize": 14,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 330,
+      "height": 300,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0,
+          0
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/rain_grid.json"
+          },
+          "transform": [
+            {
+              "calculate": "datum.s3",
+              "as": "pct"
+            }
+          ],
+          "mark": {
+            "type": "square",
+            "size": 30,
+            "strokeWidth": 0,
+            "opacity": 1
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Rain vs usual",
+              "scale": {
+                "domain": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "range": [
+                  "#7a3f06",
+                  "#d9a85a",
+                  "#f4efe3",
+                  "#6fc3b6",
+                  "#015a52"
+                ],
+                "clamp": true
+              },
+              "legend": {
+                "values": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "orient": "bottom",
+                "direction": "horizontal",
+                "gradientLength": 280,
+                "format": "d"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "pct",
+                "title": "% of usual crop-season rain"
+              },
+              {
+                "field": "avg",
+                "title": "Usual Apr-Oct rain (mm)"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/aagis_regions.topojson",
+            "format": {
+              "type": "topojson",
+              "feature": "aagis"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": null,
+            "stroke": "#8a8478",
+            "strokeWidth": 0.4,
+            "opacity": 0.7
+          }
+        }
+      ]
+    }
+  ],
+  "columns": 2,
+  "spacing": 10,
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

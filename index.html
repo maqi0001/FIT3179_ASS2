@@ -17,7 +17,7 @@
 <header class="hero"><div class="wrap">
   <h1>When the rain stops</h1>
   <p class="sub">How drought shows up in the paddocks of Australia's farming regions, and which regions feel it most. Thirty-three seasons of rainfall and wheat harvests, 1990-91 to 2022-23.</p>
-  <div class="byline">By Muhammad Aqila &middot; October 2026 &middot; FIT Data Visualisation 2</div>
+  <div class="byline">By [YOUR NAME] &middot; October 2026 &middot; FIT Data Visualisation 2</div>
 </div></header>
 
 <main class="wrap">
@@ -47,7 +47,7 @@
 <section id="where">
   <div class="kicker">2 &middot; The map</div>
   <h2>Where the rain fell</h2>
-  <p>Pick a season and watch the dry patch move. Try <b>2018-19</b>, when the brown spreads across the east, then <b>2010-11</b>, when the wet swept back.</p>
+  <p>Drag the slider and watch the dry patch move. Try <b>2018-19</b>, when the brown spreads across the east, then <b>2010-11</b>, when the wet swept back.</p>
   <div class="chart" id="c2"></div>
   <p class="note">The pale regions have no rainfall record in this dataset. Regions are ABARES farm-survey regions, covering Australia's farming land rather than the whole continent.</p>
 </section>
@@ -131,11 +131,11 @@
 </section>
 
 <section id="tiles">
-  <div class="kicker">12 &middot; State by state</div>
-  <h2>One crop, four seasons, five states</h2>
-  <p>Here each state is a tile, placed roughly where it sits on the map. Pick a crop and compare four seasons. In <b>2002-03</b> wheat yields fell to 32% of usual in Victoria and 40% in New South Wales. In <b>2010-11</b> the pattern flipped: South Australia (140%) and New South Wales (131%) had bumper crops while Western Australia managed 61%. In <b>2018-19</b> it flipped back: New South Wales fell to 37% while Western Australia reached 130%. By <b>2022-23</b> every state was above its usual yield.</p>
+  <div class="kicker">12 &middot; The whole country</div>
+  <h2>Zoom out: how dry was the whole continent?</h2>
+  <p>The earlier maps showed farming regions. This one covers the whole country, in squares about 50 km across, and compares each square with its own usual rain during the crop season (April to October). <b>Brown</b> means less rain than usual and <b>teal</b> means more. In <b>2002-03</b> the typical square got only <b>27%</b> of its usual rain, and <b>68%</b> of squares got less than half. In <b>2010-11</b> the typical square got <b>182%</b>, but the west missed out. <b>2018-19</b> was dry again (51% of squares below half), and by <b>2022-23</b> the typical square had <b>152%</b> of its usual rain.</p>
   <div class="chart" id="c12"></div>
-  <p class="note">Each tile shows the state's yield as a percentage of its usual yield for that crop (the middle value across the seasons shown). Grey tiles have no data for that crop. The Northern Territory and ACT have no crop data in this source. Seasons from 2022-23 are ABARES estimates. Source: ABARES, <i>Australian crop report: September 2026</i>.</p>
+  <p class="note">Rainfall: SILO gridded data (Queensland Government, built from Bureau of Meteorology stations). Each square is the average of about 100 small grid cells, compared with the 1991&ndash;2022 average for the same months. Very dry desert squares (usually under 25 mm in April to October) are left out. Thin lines mark the ABARES farming regions.</p>
 </section>
 
 <section id="close">
@@ -152,7 +152,7 @@
   <ul>
     <li><b>Rainfall and drought indicators:</b> Hughes, N. (2024), <i>Australian Agricultural Drought Indicators (AADI) regional indicator evaluation data</i>, Mendeley Data, <a href="https://doi.org/10.17632/8yhcr28wbk.1">doi:10.17632/8yhcr28wbk.1</a>. Method: Hughes et al. (2025), <a href="https://nhess.copernicus.org/articles/25/3461/2025/">Natural Hazards and Earth System Sciences 25, 3461</a>. Produced by ABARES and CSIRO from Bureau of Meteorology gridded rainfall (<a href="https://www.bom.gov.au/climate/maps/">bom.gov.au/climate/maps</a>). Covers 1990-91 to 2022-23.</li>
     <li><b>Wheat harvests:</b> ABARES Australian Agricultural and Grazing Industries Survey (AAGIS) estimates by region, included in the dataset above. <a href="https://www.agriculture.gov.au/abares/research-topics/surveys/farm-survey-data">agriculture.gov.au/abares</a></li>
-    <li><b>Rainfall in millimetres (chart 3):</b> SILO gridded monthly rainfall, Queensland Department of Environment, Science and Innovation, from Bureau of Meteorology station data, CC BY 4.0, <a href="https://www.longpaddock.qld.gov.au/silo/">longpaddock.qld.gov.au/silo</a>. Averaged over each ABARES region. It agrees closely with the drought-indicator rainfall scores: the two rise and fall almost in step (correlation 0.94, where 1 would be a perfect match).</li>
+    <li><b>Rainfall in millimetres (charts 3 and 12):</b> SILO gridded monthly rainfall, Queensland Department of Environment, Science and Innovation, from Bureau of Meteorology station data, CC BY 4.0, <a href="https://www.longpaddock.qld.gov.au/silo/">longpaddock.qld.gov.au/silo</a>. Averaged over each ABARES region. It agrees closely with the drought-indicator rainfall scores: the two rise and fall almost in step (correlation 0.94, where 1 would be a perfect match).</li>
     <li><b>Region boundaries:</b> ABARES AAGIS regions (ASGS 2016), simplified and reprojected for the web.</li>
     <li>One region (NT Top End Darwin) has no data and is left blank. Wheat harvests exist for 12 grain-belt regions only.</li>
     <li><b>Other crops (chart 11):</b> ABARES, <i>Australian crop report: September 2026</i>, state crop data, <a href="https://doi.org/10.25814/5s62-8a44">doi:10.25814/5s62-8a44</a> (CC BY 4.0).</li>
@@ -162,7 +162,7 @@
   <p>Charts are written in <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. Each chart's specification is in the <code>specs</code> folder of this site's repository and its data is in <code>data</code>. Designed and written by [YOUR NAME], October 2026. AI assistance (Claude, by Anthropic) was used to help write code and text; see submission notes.</p>
   </div><div>
   <h3>Reading tips</h3>
-  <p>Scores of 0 to 100 compare each region with its own history. Seasons run July to June. Use the dropdowns above the charts to change the season or region. Wheat harvests exist for 12 grain-belt regions only.</p>
+  <p>Scores of 0 to 100 compare each region with its own history. Seasons run July to June. Use the sliders and dropdowns under the charts to change the season or region. Wheat harvests exist for 12 grain-belt regions only.</p>
   </div></div>
 </div></footer>
 

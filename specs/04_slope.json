@@ -4,18 +4,7 @@
   "params": [
     {
       "name": "pickseason",
-      "value": "2002-03",
-      "bind": {
-        "input": "select",
-        "options": [
-          "1994-95",
-          "2002-03",
-          "2006-07",
-          "2018-19",
-          "2019-20"
-        ],
-        "name": "Dry season: "
-      }
+      "value": "2002-03"
     }
   ],
   "data": {
