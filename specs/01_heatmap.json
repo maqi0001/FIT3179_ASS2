@@ -24,7 +24,7 @@
         "anchor": "start",
         "fontSize": 12
       },
-      "width": 363,
+      "width": 330,
       "height": 154,
       "data": {
         "url": "data/regions.json"
@@ -38,102 +38,180 @@
           "as": "rain"
         }
       ],
-      "mark": {
-        "type": "rect",
-        "stroke": "white",
-        "strokeWidth": 0.5
-      },
-      "encoding": {
-        "x": {
-          "field": "season",
-          "type": "ordinal",
-          "title": null,
-          "axis": {
+      "layer": [
+        {
+          "mark": {
+            "type": "rect",
+            "stroke": "white",
+            "strokeWidth": 0.5
+          },
+          "encoding": {
+            "x": {
+              "field": "season",
+              "type": "ordinal",
+              "title": null,
+              "axis": {
+                "values": [
+                  "1990-91",
+                  "1994-95",
+                  "1998-99",
+                  "2002-03",
+                  "2006-07",
+                  "2010-11",
+                  "2014-15",
+                  "2018-19",
+                  "2022-23",
+                  "2022-23"
+                ],
+                "labelAngle": -45,
+                "grid": false,
+                "labels": false,
+                "ticks": false,
+                "domain": false
+              }
+            },
+            "y": {
+              "field": "region",
+              "type": "nominal",
+              "sort": [
+                "NSW Far West",
+                "NT Alice Springs Districts",
+                "NT Barkly Tablelands",
+                "NT Victoria River District - Katherine",
+                "QLD Cape York and the Gulf",
+                "QLD Central North",
+                "QLD Charleville - Longreach",
+                "QLD West and South West",
+                "SA Northern Pastoral",
+                "WA Pilbara and Central Pastoral",
+                "WA The Kimberley"
+              ],
+              "title": null,
+              "axis": {
+                "labelLimit": 240,
+                "ticks": false,
+                "domain": false
+              }
+            },
+            "color": {
+              "field": "rain",
+              "type": "quantitative",
+              "title": "Score",
+              "scale": {
+                "domain": [
+                  0,
+                  100
+                ],
+                "range": [
+                  "#8c510a",
+                  "#f6e8c3",
+                  "#c7eae5",
+                  "#01665e"
+                ]
+              },
+              "legend": {
+                "values": [
+                  0,
+                  25,
+                  50,
+                  75,
+                  100
+                ],
+                "gradientLength": 140
+              }
+            },
+            "tooltip": [
+              {
+                "field": "region",
+                "title": "Region"
+              },
+              {
+                "field": "season",
+                "title": "Season"
+              },
+              {
+                "field": "rain",
+                "title": "Rainfall (0-100)",
+                "format": ".0f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
             "values": [
-              "1990-91",
-              "1994-95",
-              "1998-99",
-              "2002-03",
-              "2006-07",
-              "2010-11",
-              "2014-15",
-              "2018-19",
-              "2022-23",
-              "2022-23"
-            ],
-            "labelAngle": -45,
-            "grid": false,
-            "labels": false,
-            "ticks": false,
-            "domain": false
-          }
-        },
-        "y": {
-          "field": "region",
-          "type": "nominal",
-          "sort": [
-            "NSW Far West",
-            "NT Alice Springs Districts",
-            "NT Barkly Tablelands",
-            "NT Victoria River District - Katherine",
-            "QLD Cape York and the Gulf",
-            "QLD Central North",
-            "QLD Charleville - Longreach",
-            "QLD West and South West",
-            "SA Northern Pastoral",
-            "WA Pilbara and Central Pastoral",
-            "WA The Kimberley"
-          ],
-          "title": null,
-          "axis": {
-            "labelLimit": 240,
-            "ticks": false,
-            "domain": false
-          }
-        },
-        "color": {
-          "field": "rain",
-          "type": "quantitative",
-          "title": "Rainfall (0-100)",
-          "scale": {
-            "domain": [
-              0,
-              100
-            ],
-            "range": [
-              "#8c510a",
-              "#f6e8c3",
-              "#c7eae5",
-              "#01665e"
+              {
+                "season": "2002-03",
+                "t": "2002-03 dry"
+              },
+              {
+                "season": "2010-11",
+                "t": "2010-11 wet"
+              },
+              {
+                "season": "2018-19",
+                "t": "2018-19 dry"
+              }
             ]
           },
-          "legend": {
-            "values": [
-              0,
-              25,
-              50,
-              75,
-              100
-            ],
-            "gradientLength": 140
-          }
-        },
-        "tooltip": [
-          {
-            "field": "region",
-            "title": "Region"
+          "transform": [],
+          "mark": {
+            "type": "text",
+            "baseline": "bottom",
+            "dy": -4,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#3b2a14"
           },
-          {
-            "field": "season",
-            "title": "Season"
-          },
-          {
-            "field": "rain",
-            "title": "Rainfall (0-100)",
-            "format": ".0f"
+          "encoding": {
+            "x": {
+              "field": "season",
+              "type": "ordinal",
+              "sort": [
+                "1990-91",
+                "1991-92",
+                "1992-93",
+                "1993-94",
+                "1994-95",
+                "1995-96",
+                "1996-97",
+                "1997-98",
+                "1998-99",
+                "1999-00",
+                "2000-01",
+                "2001-02",
+                "2002-03",
+                "2003-04",
+                "2004-05",
+                "2005-06",
+                "2006-07",
+                "2007-08",
+                "2008-09",
+                "2009-10",
+                "2010-11",
+                "2011-12",
+                "2012-13",
+                "2013-14",
+                "2014-15",
+                "2015-16",
+                "2016-17",
+                "2017-18",
+                "2018-19",
+                "2019-20",
+                "2020-21",
+                "2021-22",
+                "2022-23"
+              ]
+            },
+            "y": {
+              "value": 0
+            },
+            "text": {
+              "field": "t"
+            }
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "title": {
@@ -141,7 +219,7 @@
         "anchor": "start",
         "fontSize": 12
       },
-      "width": 363,
+      "width": 330,
       "height": 168,
       "data": {
         "url": "data/regions.json"
@@ -212,7 +290,7 @@
         "color": {
           "field": "rain",
           "type": "quantitative",
-          "title": "Rainfall (0-100)",
+          "title": "Score",
           "scale": {
             "domain": [
               0,
@@ -250,7 +328,7 @@
         "anchor": "start",
         "fontSize": 12
       },
-      "width": 363,
+      "width": 330,
       "height": 112,
       "data": {
         "url": "data/regions.json"
@@ -317,7 +395,7 @@
         "color": {
           "field": "rain",
           "type": "quantitative",
-          "title": "Rainfall (0-100)",
+          "title": "Score",
           "scale": {
             "domain": [
               0,
@@ -359,7 +437,7 @@
   },
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "font": "Helvetica, Arial, sans-serif",
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
       "labelFontSize": 11,
       "titleFontSize": 12,

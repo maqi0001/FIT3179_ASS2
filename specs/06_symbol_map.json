@@ -65,7 +65,7 @@
             ]
           },
           "legend": {
-            "orient": "bottom-right",
+            "orient": "bottom-left",
             "format": ".1f",
             "values": [
               0.5,
@@ -102,11 +102,75 @@
           }
         ]
       }
+    },
+    {
+      "data": {
+        "url": "data/summary.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.region == 'NSW Central West'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -20,
+        "dy": -16,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#7a1f14"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Biggest loss"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/summary.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.region == 'WA Central and Southern Wheat Belt'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 14,
+        "dy": 0,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#7a1f14"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Smallest loss"
+        }
+      }
     }
   ],
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "font": "Helvetica, Arial, sans-serif",
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
       "labelFontSize": 11,
       "titleFontSize": 12,

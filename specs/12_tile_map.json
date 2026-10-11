@@ -1,0 +1,2578 @@
+{
+  "params": [
+    {
+      "name": "cropSel",
+      "value": "Wheat",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Wheat",
+          "Barley",
+          "Canola",
+          "Oats",
+          "Chickpeas",
+          "Sorghum (summer)",
+          "Cotton (irrigated)"
+        ],
+        "name": "Crop: "
+      }
+    }
+  ],
+  "hconcat": [
+    {
+      "title": {
+        "text": "2002-03",
+        "subtitle": "Millennium drought",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 175,
+      "height": 240,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "color": "#e9e4d8"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": 8,
+            "fontSize": 9,
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "value": "no data"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2002-03'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "rect"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Yield vs typical (%)",
+              "scale": {
+                "domain": [
+                  0,
+                  100,
+                  200
+                ],
+                "range": [
+                  "#8c510a",
+                  "#f6f1e7",
+                  "#01665e"
+                ],
+                "clamp": true
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "pct",
+                "title": "% of typical yield"
+              },
+              {
+                "field": "yield",
+                "title": "Yield (t/ha)",
+                "format": ".2f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2002-03'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2002-03'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": 9,
+            "fontSize": 12
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "lab"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2010-11",
+        "subtitle": "Wet in the east, dry in the west",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 175,
+      "height": 240,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "color": "#e9e4d8"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": 8,
+            "fontSize": 9,
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "value": "no data"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2010-11'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "rect"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Yield vs typical (%)",
+              "scale": {
+                "domain": [
+                  0,
+                  100,
+                  200
+                ],
+                "range": [
+                  "#8c510a",
+                  "#f6f1e7",
+                  "#01665e"
+                ],
+                "clamp": true
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "pct",
+                "title": "% of typical yield"
+              },
+              {
+                "field": "yield",
+                "title": "Yield (t/ha)",
+                "format": ".2f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2010-11'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2010-11'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": 9,
+            "fontSize": 12
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "lab"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2018-19",
+        "subtitle": "Drought across the east",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 175,
+      "height": 240,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "color": "#e9e4d8"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": 8,
+            "fontSize": 9,
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "value": "no data"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2018-19'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "rect"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Yield vs typical (%)",
+              "scale": {
+                "domain": [
+                  0,
+                  100,
+                  200
+                ],
+                "range": [
+                  "#8c510a",
+                  "#f6f1e7",
+                  "#01665e"
+                ],
+                "clamp": true
+              },
+              "legend": null
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "pct",
+                "title": "% of typical yield"
+              },
+              {
+                "field": "yield",
+                "title": "Yield (t/ha)",
+                "format": ".2f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2018-19'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2018-19'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": 9,
+            "fontSize": 12
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "lab"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "2022-23",
+        "subtitle": "A bumper year",
+        "anchor": "start",
+        "fontSize": 13,
+        "subtitleFontSize": 11,
+        "subtitleColor": "#666"
+      },
+      "width": 175,
+      "height": 240,
+      "layer": [
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "color": "#e9e4d8"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold",
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            }
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "state": "Northern Territory",
+                "abbr": "NT",
+                "col": 1,
+                "row": 0
+              },
+              {
+                "state": "Queensland",
+                "abbr": "QLD",
+                "col": 2,
+                "row": 0
+              },
+              {
+                "state": "Western Australia",
+                "abbr": "WA",
+                "col": 0,
+                "row": 1
+              },
+              {
+                "state": "South Australia",
+                "abbr": "SA",
+                "col": 1,
+                "row": 1
+              },
+              {
+                "state": "New South Wales",
+                "abbr": "NSW",
+                "col": 2,
+                "row": 1
+              },
+              {
+                "state": "Victoria",
+                "abbr": "VIC",
+                "col": 2,
+                "row": 2
+              },
+              {
+                "state": "Tasmania",
+                "abbr": "TAS",
+                "col": 2,
+                "row": 3
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "dy": 8,
+            "fontSize": 9,
+            "color": "#8a8478"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "value": "no data"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2022-23'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            }
+          ],
+          "mark": {
+            "type": "rect"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "color": {
+              "field": "pct",
+              "type": "quantitative",
+              "title": "Yield vs typical (%)",
+              "scale": {
+                "domain": [
+                  0,
+                  100,
+                  200
+                ],
+                "range": [
+                  "#8c510a",
+                  "#f6f1e7",
+                  "#01665e"
+                ],
+                "clamp": true
+              },
+              "legend": {
+                "values": [
+                  0,
+                  50,
+                  100,
+                  150,
+                  200
+                ],
+                "orient": "right",
+                "gradientLength": 150
+              }
+            },
+            "tooltip": [
+              {
+                "field": "state",
+                "title": "State"
+              },
+              {
+                "field": "pct",
+                "title": "% of typical yield"
+              },
+              {
+                "field": "yield",
+                "title": "Yield (t/ha)",
+                "format": ".2f"
+              }
+            ]
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2022-23'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": -7,
+            "fontSize": 11,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "abbr"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        },
+        {
+          "data": {
+            "url": "data/state_crops.json"
+          },
+          "transform": [
+            {
+              "filter": "datum.crop == cropSel && datum.season == '2022-23'"
+            },
+            {
+              "lookup": "state",
+              "from": {
+                "data": {
+                  "values": [
+                    {
+                      "state": "Northern Territory",
+                      "abbr": "NT",
+                      "col": 1,
+                      "row": 0
+                    },
+                    {
+                      "state": "Queensland",
+                      "abbr": "QLD",
+                      "col": 2,
+                      "row": 0
+                    },
+                    {
+                      "state": "Western Australia",
+                      "abbr": "WA",
+                      "col": 0,
+                      "row": 1
+                    },
+                    {
+                      "state": "South Australia",
+                      "abbr": "SA",
+                      "col": 1,
+                      "row": 1
+                    },
+                    {
+                      "state": "New South Wales",
+                      "abbr": "NSW",
+                      "col": 2,
+                      "row": 1
+                    },
+                    {
+                      "state": "Victoria",
+                      "abbr": "VIC",
+                      "col": 2,
+                      "row": 2
+                    },
+                    {
+                      "state": "Tasmania",
+                      "abbr": "TAS",
+                      "col": 2,
+                      "row": 3
+                    }
+                  ]
+                },
+                "key": "state",
+                "fields": [
+                  "abbr",
+                  "col",
+                  "row"
+                ]
+              }
+            },
+            {
+              "calculate": "datum.pct + '%'",
+              "as": "lab"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "dy": 9,
+            "fontSize": 12
+          },
+          "encoding": {
+            "x": {
+              "field": "col",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "y": {
+              "field": "row",
+              "type": "ordinal",
+              "scale": {
+                "domain": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "paddingInner": 0.08
+              },
+              "axis": null
+            },
+            "text": {
+              "field": "lab"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.pct < 35 || datum.pct > 165",
+                "value": "#fff"
+              },
+              "value": "#222"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "spacing": 14,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

@@ -242,11 +242,76 @@
           }
         ]
       }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "value",
+              "as": "avg"
+            }
+          ],
+          "groupby": [
+            "indicator"
+          ]
+        },
+        {
+          "filter": "datum.indicator == 'Rainfall'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": 18,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#222"
+      },
+      "encoding": {
+        "x": {
+          "field": "indicator",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Rainfall",
+            "Pasture growth",
+            "Wheat yield",
+            "Farm profit"
+          ],
+          "axis": {
+            "orient": "top",
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "grid": true,
+            "domain": false,
+            "ticks": false
+          },
+          "scale": {
+            "padding": 0.1
+          }
+        },
+        "y": {
+          "field": "avg",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          }
+        },
+        "text": {
+          "value": "Average of all regions"
+        }
+      }
     }
   ],
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "font": "Helvetica, Arial, sans-serif",
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
       "labelFontSize": 11,
       "titleFontSize": 12,

@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>When the Rain Stops</title>
 <meta name="description" content="How drought shows up in Australia's wheat paddocks, 1991 to 2023.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
@@ -14,7 +17,7 @@
 <header class="hero"><div class="wrap">
   <h1>When the rain stops</h1>
   <p class="sub">How drought shows up in the paddocks of Australia's farming regions, and which regions feel it most. Thirty-three seasons of rainfall and wheat harvests, 1990-91 to 2022-23.</p>
-  <div class="byline">By Muhammad Aqila &middot; October 2026 &middot; FIT Data Visualisation 2</div>
+  <div class="byline">By [YOUR NAME] &middot; October 2026 &middot; FIT Data Visualisation 2</div>
 </div></header>
 
 <main class="wrap">
@@ -22,7 +25,7 @@
 <div class="grid g2">
 <section id="intro">
   <div class="kicker">Before you start</div>
-  <p>When it doesn't rain, Australian farmers grow less. Most of us know that. What's harder to see is <i>how much less</i>, how often it happens, and whether every region suffers the same way. Below, eleven charts follow one question from the sky to the paddock: <b>what does a dry season do to the harvest?</b></p>
+  <p>When it doesn't rain, Australian farmers grow less. Most of us know that. What's harder to see is <i>how much less</i>, how often it happens, and whether every region suffers the same way. Below, twelve charts follow one question from the sky to the paddock: <b>what does a dry season do to the harvest?</b></p>
 </section>
 <section id="howto" style="display:flex;align-items:center">
   <div class="how" style="margin:0">
@@ -37,7 +40,7 @@
   <h2>Drought arrives in waves</h2>
   <p>Each row is a farming region and each column a season. Brown means a dry season for that region, teal a wet one. Look for dark vertical bands: <b>2002-03</b> and <b>2018-19 to 2019-20</b> were dry across most regions, while <b>2010-11</b> was wet almost everywhere. Switch to the crop season to see the months that matter most for wheat.</p>
   <div class="chart" id="c1"></div>
-  <p class="note">Blank rows are regions with no record for that season. Data: AADI, ABARES and CSIRO, built from Bureau of Meteorology rainfall.</p>
+  <p class="note">Blank rows are regions with no record for that season. Data: Australian Agricultural Drought Indicators (ABARES and CSIRO), built from Bureau of Meteorology rainfall.</p>
 </section>
 
 <div class="grid g2">
@@ -64,7 +67,7 @@
   <h2>A dry season costs some regions far more than others</h2>
   <p>Each line is a grain-belt region. The left end is its usual wheat harvest and the right end is the harvest in the dry season you choose. In <b>2002-03</b> the average region harvested only about <b>46%</b> of its usual crop. Red lines fell below 40%.</p>
   <div class="chart" id="c4"></div>
-  <p class="note">&ldquo;Typical&rdquo; is each region's median harvest across 1990-91 to 2022-23. Labelled regions kept less than 45% of a typical harvest.</p>
+  <p class="note">&ldquo;Typical&rdquo; is each region's middle harvest across 1990-91 to 2022-23. Labelled regions kept less than 45% of a typical harvest.</p>
 </section>
 
 <section id="together">
@@ -124,7 +127,15 @@
   <h2>Every crop feels a dry year, except the irrigated ones</h2>
   <p>So far we have followed wheat. This chart asks whether other crops suffer too. Each row is a crop and each column a season, in five states. <b>Brown</b> means a poor yield compared with that crop's usual yield in the state, <b>teal</b> a good one. The dry seasons of <b>2002-03</b> and <b>2006-07</b> turn the winter crops brown in New South Wales and Victoria (and partly South Australia): wheat, barley, canola, oats and chickpeas fail together. The <b>irrigated crops</b>, cotton and rice, hardly change, because they are watered from dams and rivers rather than from the sky. Western Australia often runs the other way: <b>2010-11</b>, a wet year in the east, was a poor one there.</p>
   <div class="chart" id="c11"></div>
-  <p class="note">Yield is production divided by area planted, from ABARES state crop data. &ldquo;Typical&rdquo; is each crop's median yield in that state across the seasons shown. Seasons from 2022-23 are ABARES estimates, and the 2026-27 forecast is left out. Only crops with at least 25 seasons of data in a state are shown.</p>
+  <p class="note">Yield is production divided by area planted, from ABARES state crop data. &ldquo;Typical&rdquo; is each crop's middle yield in that state across the seasons shown. Seasons from 2022-23 are ABARES estimates, and the 2026-27 forecast is left out. Only crops with at least 25 seasons of data in a state are shown.</p>
+</section>
+
+<section id="tiles">
+  <div class="kicker">12 &middot; State by state</div>
+  <h2>One crop, four seasons, five states</h2>
+  <p>Here each state is a tile, placed roughly where it sits on the map. Pick a crop and compare four seasons. In <b>2002-03</b> wheat yields fell to 32% of usual in Victoria and 40% in New South Wales. In <b>2010-11</b> the pattern flipped: South Australia (140%) and New South Wales (131%) had bumper crops while Western Australia managed 61%. In <b>2018-19</b> it flipped back: New South Wales fell to 37% while Western Australia reached 130%. By <b>2022-23</b> every state was above its usual yield.</p>
+  <div class="chart" id="c12"></div>
+  <p class="note">Each tile shows the state's yield as a percentage of its usual yield for that crop (the middle value across the seasons shown). Grey tiles have no data for that crop. The Northern Territory and ACT have no crop data in this source. Seasons from 2022-23 are ABARES estimates. Source: ABARES, <i>Australian crop report: September 2026</i>.</p>
 </section>
 
 <section id="close">
@@ -141,14 +152,14 @@
   <ul>
     <li><b>Rainfall and drought indicators:</b> Hughes, N. (2024), <i>Australian Agricultural Drought Indicators (AADI) regional indicator evaluation data</i>, Mendeley Data, <a href="https://doi.org/10.17632/8yhcr28wbk.1">doi:10.17632/8yhcr28wbk.1</a>. Method: Hughes et al. (2025), <a href="https://nhess.copernicus.org/articles/25/3461/2025/">Natural Hazards and Earth System Sciences 25, 3461</a>. Produced by ABARES and CSIRO from Bureau of Meteorology gridded rainfall (<a href="https://www.bom.gov.au/climate/maps/">bom.gov.au/climate/maps</a>). Covers 1990-91 to 2022-23.</li>
     <li><b>Wheat harvests:</b> ABARES Australian Agricultural and Grazing Industries Survey (AAGIS) estimates by region, included in the dataset above. <a href="https://www.agriculture.gov.au/abares/research-topics/surveys/farm-survey-data">agriculture.gov.au/abares</a></li>
-    <li><b>Rainfall in millimetres (chart 3):</b> SILO gridded monthly rainfall, Queensland Department of Environment, Science and Innovation, from Bureau of Meteorology station data, CC BY 4.0, <a href="https://www.longpaddock.qld.gov.au/silo/">longpaddock.qld.gov.au/silo</a>. Averaged over each ABARES region. It agrees closely with the AADI rainfall scores (correlation about 0.94 across regions).</li>
+    <li><b>Rainfall in millimetres (chart 3):</b> SILO gridded monthly rainfall, Queensland Department of Environment, Science and Innovation, from Bureau of Meteorology station data, CC BY 4.0, <a href="https://www.longpaddock.qld.gov.au/silo/">longpaddock.qld.gov.au/silo</a>. Averaged over each ABARES region. It agrees closely with the drought-indicator rainfall scores: the two rise and fall almost in step (correlation 0.94, where 1 would be a perfect match).</li>
     <li><b>Region boundaries:</b> ABARES AAGIS regions (ASGS 2016), simplified and reprojected for the web.</li>
     <li>One region (NT Top End Darwin) has no data and is left blank. Wheat harvests exist for 12 grain-belt regions only.</li>
     <li><b>Other crops (chart 11):</b> ABARES, <i>Australian crop report: September 2026</i>, state crop data, <a href="https://doi.org/10.25814/5s62-8a44">doi:10.25814/5s62-8a44</a> (CC BY 4.0).</li>
   </ul>
   </div><div>
   <h3>How it was made</h3>
-  <p>Charts are written in <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. Each chart's specification is in the <code>specs</code> folder of this site's repository and its data is in <code>data</code>. Designed and written by Muhammad Aqila, October 2026. AI assistance (Claude, by Anthropic) was used to help write code and text; see submission notes.</p>
+  <p>Charts are written in <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. Each chart's specification is in the <code>specs</code> folder of this site's repository and its data is in <code>data</code>. Designed and written by [YOUR NAME], October 2026. AI assistance (Claude, by Anthropic) was used to help write code and text; see submission notes.</p>
   </div><div>
   <h3>Reading tips</h3>
   <p>Scores of 0 to 100 compare each region with its own history. Seasons run July to June. Use the dropdowns above the charts to change the season or region. Wheat harvests exist for 12 grain-belt regions only.</p>

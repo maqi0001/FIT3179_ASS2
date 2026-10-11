@@ -64,7 +64,7 @@
   "spacing": 22,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "font": "Helvetica, Arial, sans-serif",
+    "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
       "labelFontSize": 11,
       "titleFontSize": 12,
