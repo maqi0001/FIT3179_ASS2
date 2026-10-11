@@ -1,0 +1,123 @@
+{
+  "width": 520,
+  "height": 420,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/aagis_regions.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "aagis"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ece7dd",
+        "stroke": "white",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/summary.json"
+      },
+      "mark": {
+        "type": "circle",
+        "color": "#c0392b",
+        "opacity": 0.7,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "penalty",
+          "type": "quantitative",
+          "title": "Wheat lost in dry years (t/ha)",
+          "scale": {
+            "type": "sqrt",
+            "range": [
+              60,
+              1300
+            ],
+            "domain": [
+              0,
+              2.6
+            ]
+          },
+          "legend": {
+            "orient": "bottom-right",
+            "format": ".1f",
+            "values": [
+              0.5,
+              1,
+              2
+            ],
+            "offset": 4
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "wet_yield",
+            "title": "Harvest in wet years (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "dry_yield",
+            "title": "Harvest in dry years (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "penalty",
+            "title": "Lost in dry years (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "penalty_pct",
+            "title": "Share lost (%)",
+            "format": "d"
+          }
+        ]
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

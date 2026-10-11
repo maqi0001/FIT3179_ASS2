@@ -1,0 +1,365 @@
+{
+  "width": 500,
+  "height": 290,
+  "data": {
+    "url": "data/ridge.json"
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.cls == 'Driest third of years'"
+        },
+        {
+          "density": "pct",
+          "extent": [
+            0,
+            260
+          ],
+          "steps": 90,
+          "bandwidth": 11,
+          "as": [
+            "value",
+            "density"
+          ]
+        },
+        {
+          "calculate": "2 + datum.density / 0.0105",
+          "as": "top"
+        },
+        {
+          "calculate": "2",
+          "as": "base"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "fill": "#8c510a",
+        "fillOpacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              260
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              0,
+              50,
+              100,
+              150,
+              200,
+              250
+            ],
+            "grid": false
+          },
+          "title": "Wheat harvest as a % of what the region normally produces"
+        },
+        "y": {
+          "field": "top",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              3.6
+            ]
+          }
+        },
+        "y2": {
+          "field": "base"
+        }
+      },
+      "data": {
+        "url": "data/ridge.json"
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.cls == 'Middle third of years'"
+        },
+        {
+          "density": "pct",
+          "extent": [
+            0,
+            260
+          ],
+          "steps": 90,
+          "bandwidth": 11,
+          "as": [
+            "value",
+            "density"
+          ]
+        },
+        {
+          "calculate": "1 + datum.density / 0.0105",
+          "as": "top"
+        },
+        {
+          "calculate": "1",
+          "as": "base"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "fill": "#d8c79a",
+        "fillOpacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              260
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              0,
+              50,
+              100,
+              150,
+              200,
+              250
+            ],
+            "grid": false
+          },
+          "title": "Wheat harvest as a % of what the region normally produces"
+        },
+        "y": {
+          "field": "top",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              3.6
+            ]
+          }
+        },
+        "y2": {
+          "field": "base"
+        }
+      },
+      "data": {
+        "url": "data/ridge.json"
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.cls == 'Wettest third of years'"
+        },
+        {
+          "density": "pct",
+          "extent": [
+            0,
+            260
+          ],
+          "steps": 90,
+          "bandwidth": 11,
+          "as": [
+            "value",
+            "density"
+          ]
+        },
+        {
+          "calculate": "0 + datum.density / 0.0105",
+          "as": "top"
+        },
+        {
+          "calculate": "0",
+          "as": "base"
+        }
+      ],
+      "mark": {
+        "type": "area",
+        "fill": "#01665e",
+        "fillOpacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              260
+            ],
+            "nice": false
+          },
+          "axis": {
+            "values": [
+              0,
+              50,
+              100,
+              150,
+              200,
+              250
+            ],
+            "grid": false
+          },
+          "title": "Wheat harvest as a % of what the region normally produces"
+        },
+        "y": {
+          "field": "top",
+          "type": "quantitative",
+          "axis": null,
+          "scale": {
+            "domain": [
+              0,
+              3.6
+            ]
+          }
+        },
+        "y2": {
+          "field": "base"
+        }
+      },
+      "data": {
+        "url": "data/ridge.json"
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 100,
+            "a": 0,
+            "b": 3.35
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [
+          4,
+          3
+        ],
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "a",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "b"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 100,
+            "y": 3.5,
+            "t": "A normal harvest (100%)"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 255,
+            "y": 2.35,
+            "t": "Driest third of years",
+            "c": "#8c510a"
+          },
+          {
+            "x": 255,
+            "y": 1.35,
+            "t": "Middle third of years",
+            "c": "#8a7a45"
+          },
+          {
+            "x": 255,
+            "y": 0.35,
+            "t": "Wettest third of years",
+            "c": "#01665e"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "t"
+        },
+        "color": {
+          "field": "c",
+          "type": "nominal",
+          "scale": null
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

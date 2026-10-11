@@ -1,0 +1,195 @@
+{
+  "data": {
+    "url": "data/state_crops.json"
+  },
+  "facet": {
+    "row": {
+      "field": "state",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Western Australia",
+        "South Australia",
+        "Victoria",
+        "New South Wales",
+        "Queensland"
+      ],
+      "header": {
+        "labelAngle": 0,
+        "labelOrient": "top",
+        "labelAnchor": "start",
+        "labelFontSize": 13,
+        "labelFontWeight": "bold",
+        "labelPadding": 2
+      }
+    }
+  },
+  "spacing": 8,
+  "spec": {
+    "width": 690,
+    "height": {
+      "step": 16
+    },
+    "mark": {
+      "type": "rect",
+      "stroke": "white",
+      "strokeWidth": 0.5
+    },
+    "encoding": {
+      "x": {
+        "field": "season",
+        "type": "ordinal",
+        "sort": [
+          "1989-90",
+          "1990-91",
+          "1991-92",
+          "1992-93",
+          "1993-94",
+          "1994-95",
+          "1995-96",
+          "1996-97",
+          "1997-98",
+          "1998-99",
+          "1999-00",
+          "2000-01",
+          "2001-02",
+          "2002-03",
+          "2003-04",
+          "2004-05",
+          "2005-06",
+          "2006-07",
+          "2007-08",
+          "2008-09",
+          "2009-10",
+          "2010-11",
+          "2011-12",
+          "2012-13",
+          "2013-14",
+          "2014-15",
+          "2015-16",
+          "2016-17",
+          "2017-18",
+          "2018-19",
+          "2019-20",
+          "2020-21",
+          "2021-22",
+          "2022-23",
+          "2023-24",
+          "2024-25",
+          "2025-26"
+        ],
+        "title": null,
+        "axis": {
+          "values": [
+            "1990-91",
+            "1994-95",
+            "1998-99",
+            "2002-03",
+            "2006-07",
+            "2010-11",
+            "2014-15",
+            "2018-19",
+            "2022-23"
+          ],
+          "labelAngle": -40,
+          "ticks": false,
+          "domain": false,
+          "orient": "bottom"
+        }
+      },
+      "y": {
+        "field": "crop",
+        "type": "nominal",
+        "sort": [
+          "Wheat",
+          "Barley",
+          "Canola",
+          "Oats",
+          "Chickpeas",
+          "Sorghum (summer)",
+          "Cotton (irrigated)",
+          "Rice (irrigated)"
+        ],
+        "title": null,
+        "axis": {
+          "ticks": false,
+          "domain": false,
+          "labelLimit": 160
+        }
+      },
+      "color": {
+        "field": "pct",
+        "type": "quantitative",
+        "title": "Yield vs typical (%)",
+        "scale": {
+          "domain": [
+            0,
+            100,
+            200
+          ],
+          "range": [
+            "#8c510a",
+            "#f6f1e7",
+            "#01665e"
+          ],
+          "clamp": true
+        },
+        "legend": {
+          "values": [
+            0,
+            50,
+            100,
+            150,
+            200
+          ],
+          "orient": "right",
+          "gradientLength": 160
+        }
+      },
+      "tooltip": [
+        {
+          "field": "state",
+          "title": "State"
+        },
+        {
+          "field": "crop",
+          "title": "Crop"
+        },
+        {
+          "field": "season",
+          "title": "Season"
+        },
+        {
+          "field": "pct",
+          "title": "% of typical yield"
+        },
+        {
+          "field": "yield",
+          "title": "Yield (t/ha)",
+          "format": ".2f"
+        }
+      ]
+    }
+  },
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

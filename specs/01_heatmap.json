@@ -1,0 +1,376 @@
+{
+  "params": [
+    {
+      "name": "measure",
+      "value": "rain_fy",
+      "bind": {
+        "input": "radio",
+        "options": [
+          "rain_fy",
+          "rain_win"
+        ],
+        "labels": [
+          "Whole year (July-June)",
+          "Crop season (April-October)"
+        ],
+        "name": "Show: "
+      }
+    }
+  ],
+  "vconcat": [
+    {
+      "title": {
+        "text": "Pastoral",
+        "anchor": "start",
+        "fontSize": 12
+      },
+      "width": 363,
+      "height": 154,
+      "data": {
+        "url": "data/regions.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.zone == 'Pastoral'"
+        },
+        {
+          "calculate": "datum[measure]",
+          "as": "rain"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {
+          "field": "season",
+          "type": "ordinal",
+          "title": null,
+          "axis": {
+            "values": [
+              "1990-91",
+              "1994-95",
+              "1998-99",
+              "2002-03",
+              "2006-07",
+              "2010-11",
+              "2014-15",
+              "2018-19",
+              "2022-23",
+              "2022-23"
+            ],
+            "labelAngle": -45,
+            "grid": false,
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": [
+            "NSW Far West",
+            "NT Alice Springs Districts",
+            "NT Barkly Tablelands",
+            "NT Victoria River District - Katherine",
+            "QLD Cape York and the Gulf",
+            "QLD Central North",
+            "QLD Charleville - Longreach",
+            "QLD West and South West",
+            "SA Northern Pastoral",
+            "WA Pilbara and Central Pastoral",
+            "WA The Kimberley"
+          ],
+          "title": null,
+          "axis": {
+            "labelLimit": 240,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "color": {
+          "field": "rain",
+          "type": "quantitative",
+          "title": "Rainfall (0-100)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#8c510a",
+              "#f6e8c3",
+              "#c7eae5",
+              "#01665e"
+            ]
+          },
+          "legend": {
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ],
+            "gradientLength": 140
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "rain",
+            "title": "Rainfall (0-100)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "Wheat-Sheep",
+        "anchor": "start",
+        "fontSize": 12
+      },
+      "width": 363,
+      "height": 168,
+      "data": {
+        "url": "data/regions.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.zone == 'Wheat Sheep'"
+        },
+        {
+          "calculate": "datum[measure]",
+          "as": "rain"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {
+          "field": "season",
+          "type": "ordinal",
+          "title": null,
+          "axis": {
+            "values": [
+              "1990-91",
+              "1994-95",
+              "1998-99",
+              "2002-03",
+              "2006-07",
+              "2010-11",
+              "2014-15",
+              "2018-19",
+              "2022-23",
+              "2022-23"
+            ],
+            "labelAngle": -45,
+            "grid": false,
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": [
+            "NSW Central West",
+            "NSW North West Slopes and Plains",
+            "NSW Riverina",
+            "QLD Eastern Darling Downs",
+            "QLD Western Downs and Central Highlands",
+            "SA Eyre Peninsula",
+            "SA Murray Lands and Yorke Peninsula",
+            "VIC Central North",
+            "VIC Mallee",
+            "VIC Wimmera",
+            "WA Central and Southern Wheat Belt",
+            "WA Northern and Eastern Wheat Belt"
+          ],
+          "title": null,
+          "axis": {
+            "labelLimit": 240,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "color": {
+          "field": "rain",
+          "type": "quantitative",
+          "title": "Rainfall (0-100)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#8c510a",
+              "#f6e8c3",
+              "#c7eae5",
+              "#01665e"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "rain",
+            "title": "Rainfall (0-100)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "High Rainfall",
+        "anchor": "start",
+        "fontSize": 12
+      },
+      "width": 363,
+      "height": 112,
+      "data": {
+        "url": "data/regions.json"
+      },
+      "transform": [
+        {
+          "filter": "datum.zone == 'High Rainfall'"
+        },
+        {
+          "calculate": "datum[measure]",
+          "as": "rain"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "x": {
+          "field": "season",
+          "type": "ordinal",
+          "title": null,
+          "axis": {
+            "values": [
+              "1990-91",
+              "1994-95",
+              "1998-99",
+              "2002-03",
+              "2006-07",
+              "2010-11",
+              "2014-15",
+              "2018-19",
+              "2022-23",
+              "2022-23"
+            ],
+            "labelAngle": -45,
+            "grid": false,
+            "labels": true,
+            "ticks": true,
+            "domain": true
+          }
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": [
+            "NSW Coastal",
+            "NSW Tablelands (Northern Central and Southern)",
+            "QLD Northern Coastal - Mackay to Cairns",
+            "QLD Southern Coastal - Curtis to Moreton",
+            "SA South East",
+            "TAS Tasmania",
+            "VIC Southern and Eastern Victoria",
+            "WA South West Coastal"
+          ],
+          "title": null,
+          "axis": {
+            "labelLimit": 240,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "color": {
+          "field": "rain",
+          "type": "quantitative",
+          "title": "Rainfall (0-100)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#8c510a",
+              "#f6e8c3",
+              "#c7eae5",
+              "#01665e"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "rain",
+            "title": "Rainfall (0-100)",
+            "format": ".0f"
+          }
+        ]
+      }
+    }
+  ],
+  "spacing": 12,
+  "resolve": {
+    "scale": {
+      "color": "shared",
+      "x": "shared"
+    }
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

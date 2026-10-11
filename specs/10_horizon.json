@@ -1,0 +1,312 @@
+{
+  "data": {
+    "url": "data/horizon.json"
+  },
+  "facet": {
+    "row": {
+      "field": "region",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "WA Northern and Eastern Wheat Belt",
+        "WA Central and Southern Wheat Belt",
+        "SA Eyre Peninsula",
+        "SA Murray Lands and Yorke Peninsula",
+        "VIC Mallee",
+        "VIC Wimmera",
+        "VIC Central North",
+        "NSW Riverina",
+        "NSW Central West",
+        "NSW North West Slopes and Plains",
+        "QLD Western Downs and Central Highlands",
+        "QLD Eastern Darling Downs"
+      ],
+      "header": {
+        "labels": false
+      }
+    }
+  },
+  "spacing": 2,
+  "spec": {
+    "width": 780,
+    "height": 28,
+    "layer": [
+      {
+        "transform": [
+          {
+            "calculate": "datum.dev > 0 ? datum.dev : 0",
+            "as": "v"
+          }
+        ],
+        "mark": {
+          "type": "area",
+          "clip": true,
+          "color": "#9ecae1",
+          "interpolate": "monotone"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                1991,
+                2023
+              ],
+              "nice": false
+            },
+            "axis": {
+              "values": [
+                1991,
+                1995,
+                1999,
+                2003,
+                2007,
+                2011,
+                2015,
+                2019,
+                2023
+              ],
+              "format": "d",
+              "title": null,
+              "grid": false
+            }
+          },
+          "y": {
+            "field": "v",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                40
+              ]
+            },
+            "axis": null
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "calculate": "datum.dev > 0 ? datum.dev - 40 : 0",
+            "as": "v"
+          }
+        ],
+        "mark": {
+          "type": "area",
+          "clip": true,
+          "color": "#3182bd",
+          "interpolate": "monotone"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                1991,
+                2023
+              ],
+              "nice": false
+            },
+            "axis": {
+              "values": [
+                1991,
+                1995,
+                1999,
+                2003,
+                2007,
+                2011,
+                2015,
+                2019,
+                2023
+              ],
+              "format": "d",
+              "title": null,
+              "grid": false
+            }
+          },
+          "y": {
+            "field": "v",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                40
+              ]
+            },
+            "axis": null
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "calculate": "datum.dev < 0 ? -datum.dev : 0",
+            "as": "v"
+          }
+        ],
+        "mark": {
+          "type": "area",
+          "clip": true,
+          "color": "#fdae6b",
+          "interpolate": "monotone"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                1991,
+                2023
+              ],
+              "nice": false
+            },
+            "axis": {
+              "values": [
+                1991,
+                1995,
+                1999,
+                2003,
+                2007,
+                2011,
+                2015,
+                2019,
+                2023
+              ],
+              "format": "d",
+              "title": null,
+              "grid": false
+            }
+          },
+          "y": {
+            "field": "v",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                40
+              ]
+            },
+            "axis": null
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "calculate": "datum.dev < 0 ? -datum.dev - 40 : 0",
+            "as": "v"
+          }
+        ],
+        "mark": {
+          "type": "area",
+          "clip": true,
+          "color": "#d94801",
+          "interpolate": "monotone"
+        },
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                1991,
+                2023
+              ],
+              "nice": false
+            },
+            "axis": {
+              "values": [
+                1991,
+                1995,
+                1999,
+                2003,
+                2007,
+                2011,
+                2015,
+                2019,
+                2023
+              ],
+              "format": "d",
+              "title": null,
+              "grid": false
+            }
+          },
+          "y": {
+            "field": "v",
+            "type": "quantitative",
+            "scale": {
+              "domain": [
+                0,
+                40
+              ]
+            },
+            "axis": null
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "window": [
+              {
+                "op": "row_number",
+                "as": "rn"
+              }
+            ],
+            "groupby": [
+              "region"
+            ]
+          },
+          {
+            "filter": "datum.rn == 1"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "top",
+          "dx": 4,
+          "dy": 3,
+          "fontSize": 11,
+          "fontWeight": "bold",
+          "color": "#222"
+        },
+        "encoding": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 0
+          },
+          "text": {
+            "field": "region"
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {
+    "scale": {
+      "y": "shared"
+    }
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

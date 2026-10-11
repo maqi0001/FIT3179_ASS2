@@ -1,0 +1,193 @@
+{
+  "width": 320,
+  "height": 340,
+  "params": [
+    {
+      "name": "pickseason",
+      "value": "2002-03",
+      "bind": {
+        "input": "select",
+        "options": [
+          "1994-95",
+          "2002-03",
+          "2006-07",
+          "2018-19",
+          "2019-20"
+        ],
+        "name": "Dry season: "
+      }
+    }
+  ],
+  "data": {
+    "url": "data/slope.json"
+  },
+  "transform": [
+    {
+      "filter": "datum.pick == pickseason"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "point",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "A typical season",
+        "The dry season"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "orient": "top",
+        "domain": false,
+        "ticks": false
+      },
+      "scale": {
+        "padding": 0.4
+      }
+    },
+    "y": {
+      "field": "yield",
+      "type": "quantitative",
+      "title": "Wheat harvest (tonnes per hectare)",
+      "scale": {
+        "zero": true
+      }
+    },
+    "color": {
+      "field": "kept",
+      "type": "quantitative",
+      "title": "Harvest as % of typical",
+      "scale": {
+        "type": "threshold",
+        "domain": [
+          40,
+          70
+        ],
+        "range": [
+          "#a50f15",
+          "#e08a3c",
+          "#4a7ba6"
+        ]
+      },
+      "legend": {
+        "orient": "bottom",
+        "format": "d",
+        "direction": "horizontal",
+        "titleLimit": 300
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "detail": {
+          "field": "region",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 60
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "yield",
+            "title": "Harvest (t/ha)",
+            "format": ".2f"
+          },
+          {
+            "field": "kept",
+            "title": "% of typical",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.point == 'The dry season' && datum.kept < 45"
+        },
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "rk"
+            }
+          ],
+          "sort": [
+            {
+              "field": "yield"
+            }
+          ]
+        },
+        {
+          "joinaggregate": [
+            {
+              "op": "count",
+              "as": "n"
+            },
+            {
+              "op": "mean",
+              "field": "yield",
+              "as": "mid"
+            }
+          ]
+        },
+        {
+          "calculate": "datum.mid + (datum.rk - (datum.n + 1) / 2) * 0.11",
+          "as": "ylab"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 10
+      },
+      "encoding": {
+        "y": {
+          "field": "ylab",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "region",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#444"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

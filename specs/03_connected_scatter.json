@@ -1,0 +1,231 @@
+{
+  "width": 470,
+  "height": 360,
+  "params": [
+    {
+      "name": "region",
+      "value": "NSW Central West",
+      "bind": {
+        "input": "select",
+        "options": [
+          "WA Northern and Eastern Wheat Belt",
+          "WA Central and Southern Wheat Belt",
+          "SA Eyre Peninsula",
+          "SA Murray Lands and Yorke Peninsula",
+          "VIC Mallee",
+          "VIC Wimmera",
+          "VIC Central North",
+          "NSW Riverina",
+          "NSW Central West",
+          "NSW North West Slopes and Plains",
+          "QLD Western Downs and Central Highlands",
+          "QLD Eastern Darling Downs"
+        ],
+        "name": "Region: "
+      }
+    },
+    {
+      "name": "episode",
+      "value": 2017,
+      "bind": {
+        "input": "select",
+        "options": [
+          2000,
+          2017
+        ],
+        "labels": [
+          "Millennium drought (1999-00 to 2005-06)",
+          "Recent drought and recovery (2016-17 to 2021-22)"
+        ],
+        "name": "Follow: "
+      }
+    }
+  ],
+  "data": {
+    "url": "data/regions.json"
+  },
+  "transform": [
+    {
+      "filter": "datum.region == region && isValid(datum.wheat_t) && isValid(datum.rain_mm)"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 45,
+        "color": "#bbb",
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "rain_mm",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "nice": true
+          },
+          "axis": {
+            "tickCount": 6
+          },
+          "title": "Crop-season rainfall, April to October (millimetres)"
+        },
+        "y": {
+          "field": "wheat_t",
+          "type": "quantitative",
+          "title": "Wheat harvest (tonnes per hectare)",
+          "scale": {
+            "zero": true
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year >= episode && datum.year <= episode + 6"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#c0392b",
+        "strokeWidth": 2,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "rain_mm",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "nice": true
+          },
+          "axis": {
+            "tickCount": 6
+          },
+          "title": "Crop-season rainfall, April to October (millimetres)"
+        },
+        "y": {
+          "field": "wheat_t",
+          "type": "quantitative",
+          "title": "Wheat harvest (tonnes per hectare)",
+          "scale": {
+            "zero": true
+          }
+        },
+        "order": {
+          "field": "year",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year >= episode && datum.year <= episode + 6"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 90,
+        "color": "#c0392b"
+      },
+      "encoding": {
+        "x": {
+          "field": "rain_mm",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "nice": true
+          },
+          "axis": {
+            "tickCount": 6
+          },
+          "title": "Crop-season rainfall, April to October (millimetres)"
+        },
+        "y": {
+          "field": "wheat_t",
+          "type": "quantitative",
+          "title": "Wheat harvest (tonnes per hectare)",
+          "scale": {
+            "zero": true
+          }
+        },
+        "tooltip": [
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "rain_mm",
+            "title": "Apr-Oct rainfall (mm)",
+            "format": ".0f"
+          },
+          {
+            "field": "wheat_t",
+            "title": "Harvest (t/ha)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year >= episode && datum.year <= episode + 6"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#8e2a20"
+      },
+      "encoding": {
+        "x": {
+          "field": "rain_mm",
+          "type": "quantitative",
+          "scale": {
+            "zero": false,
+            "nice": true
+          },
+          "axis": {
+            "tickCount": 6
+          },
+          "title": "Crop-season rainfall, April to October (millimetres)"
+        },
+        "y": {
+          "field": "wheat_t",
+          "type": "quantitative",
+          "title": "Wheat harvest (tonnes per hectare)",
+          "scale": {
+            "zero": true
+          }
+        },
+        "text": {
+          "field": "season",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

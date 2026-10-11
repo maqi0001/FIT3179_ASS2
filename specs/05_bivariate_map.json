@@ -1,0 +1,377 @@
+{
+  "params": [
+    {
+      "name": "byr",
+      "value": 2020,
+      "bind": {
+        "input": "select",
+        "options": [
+          1991,
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "labels": [
+          "1990-91",
+          "1991-92",
+          "1992-93",
+          "1993-94",
+          "1994-95",
+          "1995-96",
+          "1996-97",
+          "1997-98",
+          "1998-99",
+          "1999-00",
+          "2000-01",
+          "2001-02",
+          "2002-03",
+          "2003-04",
+          "2004-05",
+          "2005-06",
+          "2006-07",
+          "2007-08",
+          "2008-09",
+          "2009-10",
+          "2010-11",
+          "2011-12",
+          "2012-13",
+          "2013-14",
+          "2014-15",
+          "2015-16",
+          "2016-17",
+          "2017-18",
+          "2018-19",
+          "2019-20",
+          "2020-21",
+          "2021-22",
+          "2022-23"
+        ],
+        "name": "Season (July-June): "
+      }
+    }
+  ],
+  "hconcat": [
+    {
+      "width": 380,
+      "height": 360,
+      "projection": {
+        "type": "conicEqualArea",
+        "parallels": [
+          -18,
+          -36
+        ],
+        "rotate": [
+          -134,
+          0,
+          0
+        ]
+      },
+      "data": {
+        "url": "data/aagis_regions.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "aagis"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.aagis",
+          "from": {
+            "data": {
+              "url": "data/wide.json"
+            },
+            "key": "code",
+            "fields": [
+              "name",
+              "bv1991",
+              "bv1992",
+              "bv1993",
+              "bv1994",
+              "bv1995",
+              "bv1996",
+              "bv1997",
+              "bv1998",
+              "bv1999",
+              "bv2000",
+              "bv2001",
+              "bv2002",
+              "bv2003",
+              "bv2004",
+              "bv2005",
+              "bv2006",
+              "bv2007",
+              "bv2008",
+              "bv2009",
+              "bv2010",
+              "bv2011",
+              "bv2012",
+              "bv2013",
+              "bv2014",
+              "bv2015",
+              "bv2016",
+              "bv2017",
+              "bv2018",
+              "bv2019",
+              "bv2020",
+              "bv2021",
+              "bv2022",
+              "bv2023",
+              "tb1991",
+              "tb1992",
+              "tb1993",
+              "tb1994",
+              "tb1995",
+              "tb1996",
+              "tb1997",
+              "tb1998",
+              "tb1999",
+              "tb2000",
+              "tb2001",
+              "tb2002",
+              "tb2003",
+              "tb2004",
+              "tb2005",
+              "tb2006",
+              "tb2007",
+              "tb2008",
+              "tb2009",
+              "tb2010",
+              "tb2011",
+              "tb2012",
+              "tb2013",
+              "tb2014",
+              "tb2015",
+              "tb2016",
+              "tb2017",
+              "tb2018",
+              "tb2019",
+              "tb2020",
+              "tb2021",
+              "tb2022",
+              "tb2023"
+            ]
+          }
+        },
+        {
+          "calculate": "datum['bv'+byr]",
+          "as": "key"
+        },
+        {
+          "calculate": "datum['tb'+byr]",
+          "as": "tip"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "A1",
+              "B1",
+              "C1",
+              "A2",
+              "B2",
+              "C2",
+              "A3",
+              "B3",
+              "C3"
+            ],
+            "range": [
+              "#e8e8e8",
+              "#ace4e4",
+              "#5ac8c8",
+              "#dfb0d6",
+              "#a5add3",
+              "#5698b9",
+              "#be64ac",
+              "#8c62aa",
+              "#3b4994"
+            ]
+          },
+          "condition": {
+            "test": "!isValid(datum.key)",
+            "value": "#f1eadf"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Region"
+          },
+          {
+            "field": "tip",
+            "title": "Details"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "How to read the colours",
+        "fontSize": 11,
+        "anchor": "start"
+      },
+      "width": 105,
+      "height": 105,
+      "data": {
+        "values": [
+          {
+            "key": "A1",
+            "rain": 0,
+            "harvest": 0
+          },
+          {
+            "key": "B1",
+            "rain": 1,
+            "harvest": 0
+          },
+          {
+            "key": "C1",
+            "rain": 2,
+            "harvest": 0
+          },
+          {
+            "key": "A2",
+            "rain": 0,
+            "harvest": 1
+          },
+          {
+            "key": "B2",
+            "rain": 1,
+            "harvest": 1
+          },
+          {
+            "key": "C2",
+            "rain": 2,
+            "harvest": 1
+          },
+          {
+            "key": "A3",
+            "rain": 0,
+            "harvest": 2
+          },
+          {
+            "key": "B3",
+            "rain": 1,
+            "harvest": 2
+          },
+          {
+            "key": "C3",
+            "rain": 2,
+            "harvest": 2
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "rain",
+          "type": "ordinal",
+          "title": "Rainfall: wetter  \u2192  drier",
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "harvest",
+          "type": "ordinal",
+          "sort": "descending",
+          "title": "Harvest: better  \u2192  worse",
+          "axis": {
+            "labels": false,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "A1",
+              "B1",
+              "C1",
+              "A2",
+              "B2",
+              "C2",
+              "A3",
+              "B3",
+              "C3"
+            ],
+            "range": [
+              "#e8e8e8",
+              "#ace4e4",
+              "#5ac8c8",
+              "#dfb0d6",
+              "#a5add3",
+              "#5698b9",
+              "#be64ac",
+              "#8c62aa",
+              "#3b4994"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "spacing": 14,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}

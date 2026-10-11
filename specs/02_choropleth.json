@@ -1,0 +1,257 @@
+{
+  "width": 520,
+  "height": 420,
+  "params": [
+    {
+      "name": "yr",
+      "value": 2019,
+      "bind": {
+        "input": "select",
+        "options": [
+          1991,
+          1992,
+          1993,
+          1994,
+          1995,
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "labels": [
+          "1990-91",
+          "1991-92",
+          "1992-93",
+          "1993-94",
+          "1994-95",
+          "1995-96",
+          "1996-97",
+          "1997-98",
+          "1998-99",
+          "1999-00",
+          "2000-01",
+          "2001-02",
+          "2002-03",
+          "2003-04",
+          "2004-05",
+          "2005-06",
+          "2006-07",
+          "2007-08",
+          "2008-09",
+          "2009-10",
+          "2010-11",
+          "2011-12",
+          "2012-13",
+          "2013-14",
+          "2014-15",
+          "2015-16",
+          "2016-17",
+          "2017-18",
+          "2018-19",
+          "2019-20",
+          "2020-21",
+          "2021-22",
+          "2022-23"
+        ],
+        "name": "Season (July-June): "
+      }
+    }
+  ],
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -18,
+      -36
+    ],
+    "rotate": [
+      -134,
+      0,
+      0
+    ]
+  },
+  "data": {
+    "url": "data/aagis_regions.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "aagis"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.aagis",
+      "from": {
+        "data": {
+          "url": "data/wide.json"
+        },
+        "key": "code",
+        "fields": [
+          "name",
+          "rf1991",
+          "rf1992",
+          "rf1993",
+          "rf1994",
+          "rf1995",
+          "rf1996",
+          "rf1997",
+          "rf1998",
+          "rf1999",
+          "rf2000",
+          "rf2001",
+          "rf2002",
+          "rf2003",
+          "rf2004",
+          "rf2005",
+          "rf2006",
+          "rf2007",
+          "rf2008",
+          "rf2009",
+          "rf2010",
+          "rf2011",
+          "rf2012",
+          "rf2013",
+          "rf2014",
+          "rf2015",
+          "rf2016",
+          "rf2017",
+          "rf2018",
+          "rf2019",
+          "rf2020",
+          "rf2021",
+          "rf2022",
+          "rf2023",
+          "tf1991",
+          "tf1992",
+          "tf1993",
+          "tf1994",
+          "tf1995",
+          "tf1996",
+          "tf1997",
+          "tf1998",
+          "tf1999",
+          "tf2000",
+          "tf2001",
+          "tf2002",
+          "tf2003",
+          "tf2004",
+          "tf2005",
+          "tf2006",
+          "tf2007",
+          "tf2008",
+          "tf2009",
+          "tf2010",
+          "tf2011",
+          "tf2012",
+          "tf2013",
+          "tf2014",
+          "tf2015",
+          "tf2016",
+          "tf2017",
+          "tf2018",
+          "tf2019",
+          "tf2020",
+          "tf2021",
+          "tf2022",
+          "tf2023"
+        ]
+      }
+    },
+    {
+      "calculate": "datum['rf'+yr]",
+      "as": "rain"
+    },
+    {
+      "calculate": "datum['tf'+yr]",
+      "as": "tip"
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "white",
+    "strokeWidth": 0.6
+  },
+  "encoding": {
+    "color": {
+      "field": "rain",
+      "type": "quantitative",
+      "title": "Rainfall (0-100)",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ],
+        "range": [
+          "#8c510a",
+          "#f6e8c3",
+          "#c7eae5",
+          "#01665e"
+        ]
+      },
+      "legend": {
+        "values": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "gradientLength": 240,
+        "orient": "bottom",
+        "direction": "horizontal"
+      },
+      "condition": {
+        "test": "!isValid(datum.rain)",
+        "value": "#e6e1d8"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "title": "Region"
+      },
+      {
+        "field": "tip",
+        "title": "How wet?"
+      }
+    ]
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "font": "Helvetica, Arial, sans-serif",
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": null
+    }
+  }
+}
