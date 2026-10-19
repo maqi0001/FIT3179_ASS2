@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "GRIDDED MAP in 4 panels (concat, 2 columns, one shared colour scale). Each square is a 0.5 degree grid cell (about 50 km) coloured by April-October rainfall as % of its 1991-2022 average. Data: data/rain_grid.json from SILO monthly rainfall; fields s0-s3 hold the four seasons. Squares are 'square' marks placed by longitude and latitude. A thin outline of the farming regions is drawn on top.",
   "concat": [
     {
       "title": {
@@ -464,7 +466,6 @@
       "color": "shared"
     }
   },
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

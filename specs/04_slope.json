@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "SLOPE CHART. Each line is one grain-belt region, from its usual (middle) harvest on the left to its harvest in the chosen dry season on the right. Data: data/slope.json. Parameter 'pickseason' is set by the slider. Colour is a threshold scale on % of usual harvest (under 40 red, 40-70 orange, 70 and over blue). The third layer labels regions below 45% and spaces the labels apart ('rank' window transform).",
   "width": 320,
   "height": 340,
   "params": [
@@ -163,7 +165,6 @@
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

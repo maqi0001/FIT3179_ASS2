@@ -1,6 +1,8 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "PROPORTIONAL SYMBOL MAP. One circle per grain-belt region, placed at the region's centre point. Circle area (sqrt scale) = wheat lost in dry years = average harvest in the wettest third of seasons minus the driest third (t/ha). Data: data/summary.json. The grey base map is the region TopoJSON; three small text layers label the biggest and smallest loss.",
   "width": 520,
-  "height": 420,
+  "height": 470,
   "projection": {
     "type": "conicEqualArea",
     "parallels": [
@@ -168,7 +170,6 @@
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

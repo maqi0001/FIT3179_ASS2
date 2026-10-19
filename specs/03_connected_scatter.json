@@ -1,6 +1,8 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "CONNECTED SCATTERPLOT combining TWO sources. x = April-October rainfall in mm (SILO, field rain_mm), y = wheat harvest in t/ha (ABARES survey, field wheat_t), from data/regions.json. Grey dots = every season for the chosen region (parameter 'region'). The red path joins one drought episode in time order (parameter 'episode' = 2000 or 2017, covering 7 seasons) and its labels give the seasons.",
   "width": 470,
-  "height": 360,
+  "height": 430,
   "params": [
     {
       "name": "region",
@@ -212,7 +214,6 @@
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

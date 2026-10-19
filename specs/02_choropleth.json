@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "CHOROPLETH MAP of the ABARES farming regions coloured by rainfall score. Geometry: data/aagis_regions.topojson. Rainfall: data/wide.json, which has one column per season (rf1991 ... rf2023); a 'lookup' joins it to the map by region code and 'calculate' picks the column for the chosen season. Parameter 'yr' (season end year) is set by the slider added in js/main.js. Projection: conicEqualArea centred on Australia.",
   "width": 520,
   "height": 420,
   "params": [
@@ -164,7 +166,6 @@
       }
     ]
   },
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

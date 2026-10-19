@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "HORIZON CHART, one strip per region (facet by row), west to east. Wheat harvest compared with usual: blue above, orange below. Each strip is built from 4 clipped area layers: two bands for above usual and two for below (each band = 40 percentage points, so darker = further from usual). Data: data/horizon.json. The last layer writes the region name on each strip.",
   "data": {
     "url": "data/horizon.json"
   },
@@ -29,7 +31,7 @@
   "spacing": 2,
   "spec": {
     "width": 780,
-    "height": 28,
+    "height": 30,
     "layer": [
       {
         "transform": [
@@ -293,7 +295,6 @@
       "y": "shared"
     }
   },
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

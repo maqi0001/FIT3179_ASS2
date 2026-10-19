@@ -14,12 +14,18 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+<!-- ===== PAGE MAP =====
+     Header, then 12 story steps in order: 1 heatmap, 2 choropleth, 3 connected scatter, 4 slope, 5 bivariate map,
+     6 symbol map, 7 parallel coordinates, 8 ridgeline, 9 waffle, 10 horizon, 11 crop heatmap, 12 gridded rain map.
+     Each <div class="chart" id="cN"> is filled by js/main.js from specs/NN_*.json. -->
+<!-- HEADER: title, one-line summary, author and date -->
 <header class="hero"><div class="wrap">
   <h1>When the rain stops</h1>
   <p class="sub">How drought shows up in the paddocks of Australia's farming regions, and which regions feel it most. Thirty-three seasons of rainfall and wheat harvests, 1990-91 to 2022-23.</p>
   <div class="byline">By Muhammad Aqila &middot; October 2026 &middot; FIT Data Visualisation 2</div>
 </div></header>
 
+<!-- INTRO: why it matters + how to read the 0-100 score (explained for a non-expert audience) -->
 <main class="wrap">
 
 <div class="grid g2">
@@ -35,15 +41,23 @@
 </section>
 </div>
 
+<!-- STEP 1 (chart 1): HEATMAP. Shows WHEN drought hits: rows = regions, columns = seasons. Spec: specs/01_heatmap.json. -->
 <section id="waves">
+  <div class="side">
   <div class="kicker">1 &middot; The pattern</div>
   <h2>Drought arrives in waves</h2>
   <p>Each row is a farming region and each column a season. Brown means a dry season for that region, teal a wet one. Look for dark vertical bands: <b>2002-03</b> and <b>2018-19 to 2019-20</b> were dry across most regions, while <b>2010-11</b> was wet almost everywhere. Switch to the crop season to see the months that matter most for wheat.</p>
-  <div class="chart" id="c1"></div>
+  <div class="stats">
+    <div><b>19 of 31</b><span>regions had their driest quarter on record in 2002-03</span></div>
+    <div><b>28 of 31</b><span>regions had their wettest quarter in 2010-11</span></div>
+    <div><b>24 of 31</b><span>regions were back in their driest quarter in 2019-20</span></div>
+  </div>
+  </div><div class="chart" id="c1"></div>
   <p class="note">Blank rows are regions with no record for that season. Data: Australian Agricultural Drought Indicators (ABARES and CSIRO), built from Bureau of Meteorology rainfall.</p>
 </section>
 
-<div class="grid g2">
+<div class="grid g2 pairs">
+<!-- STEP 2 (chart 2): CHOROPLETH MAP. Shows WHERE the rain fell, season chosen with the slider. Spec: specs/02_choropleth.json. -->
 <section id="where">
   <div class="kicker">2 &middot; The map</div>
   <h2>Where the rain fell</h2>
@@ -52,6 +66,7 @@
   <p class="note">The pale regions have no rainfall record in this dataset. Regions are ABARES farm-survey regions, covering Australia's farming land rather than the whole continent.</p>
 </section>
 
+<!-- STEP 3 (chart 3): CONNECTED SCATTERPLOT. Rain (SILO, mm) vs wheat harvest (ABARES). Two sources combined. Spec: specs/03_connected_scatter.json. -->
 <section id="link">
   <div class="kicker">3 &middot; The link</div>
   <h2>Rain goes straight into the wheat</h2>
@@ -61,7 +76,8 @@
 </section>
 </div>
 
-<div class="grid g2">
+<div class="grid g2 pairs">
+<!-- STEP 4 (chart 4): SLOPE CHART. Usual harvest vs harvest in a chosen dry season, per region. Spec: specs/04_slope.json. -->
 <section id="slope">
   <div class="kicker">4 &middot; The cost</div>
   <h2>A dry season costs some regions far more than others</h2>
@@ -70,6 +86,7 @@
   <p class="note">&ldquo;Typical&rdquo; is each region's middle harvest across 1990-91 to 2022-23. Labelled regions kept less than 45% of a typical harvest.</p>
 </section>
 
+<!-- STEP 5 (chart 5): BIVARIATE CHOROPLETH. Rain and harvest on one map (3x3 colour key). Spec: specs/05_bivariate_map.json. -->
 <section id="together">
   <div class="kicker">5 &middot; Rain and harvest together</div>
   <h2>Where it was dry and the harvest failed</h2>
@@ -79,7 +96,8 @@
 </section>
 </div>
 
-<div class="grid g2">
+<div class="grid g2 pairs">
+<!-- STEP 6 (chart 6): PROPORTIONAL SYMBOL MAP. Circle size = wheat lost in dry years. Spec: specs/06_symbol_map.json. -->
 <section id="biggest">
   <div class="kicker">6 &middot; The biggest losers</div>
   <h2>Where a dry spell costs the most wheat</h2>
@@ -88,6 +106,7 @@
   <p class="note">A simple comparison of averages. Harvests also change with farming methods and prices over 30 years, so treat the size of each loss as a guide.</p>
 </section>
 
+<!-- STEP 7 (chart 7): PARALLEL COORDINATES. Rain, pasture, wheat and farm profit for every region. Spec: specs/07_parallel.json. -->
 <section id="every-front">
   <div class="kicker">7 &middot; Beyond the wheat</div>
   <h2>Drought rarely hits just one thing</h2>
@@ -97,14 +116,17 @@
 </section>
 </div>
 
-<div class="grid g2">
+<div class="grid g2 pairs">
+<!-- STEP 8 (chart 8): RIDGELINE. Harvest distribution in driest / middle / wettest thirds of seasons. Spec: specs/08_ridgeline.json. -->
 <section id="shift">
   <div class="kicker">8 &middot; The whole picture</div>
   <h2>Dry years shift the whole harvest down</h2>
   <p>Each shape shows how harvests were spread across all 12 grain-belt regions and every season. In the driest third of seasons the typical harvest was only <b>65%</b> of normal, against <b>100%</b> in middling seasons and <b>119%</b> in the wettest. The dashed line marks a normal harvest.</p>
   <div class="chart" id="c8"></div>
+  <p class="note">Each shape pools the 12 grain-belt regions. Seasons are split into thirds by April&ndash;October rainfall, so each shape has about the same number of seasons.</p>
 </section>
 
+<!-- STEP 9 (chart 9): WAFFLE CHART. "55 in 100" harvests fall below 70% of normal in dry seasons. Spec: specs/09_waffle.json. -->
 <section id="odds">
   <div class="kicker">9 &middot; The odds</div>
   <h2>A dry season puts the harvest at risk</h2>
@@ -114,14 +136,22 @@
 </section>
 </div>
 
+<!-- STEP 10 (chart 10): HORIZON CHART. One strip per region, wheat harvest vs usual, 1991-2023. Spec: specs/10_horizon.json. -->
 <section id="regions">
+  <div class="side">
   <div class="kicker">10 &middot; Region by region</div>
   <h2>The ups and downs, 1991 to 2023</h2>
   <p>Each strip is one region's wheat harvest compared with its usual level, from west (top) to east (bottom). <span style="color:#3182bd"><b>Blue</b></span> is better than usual, <span style="color:#d94801"><b>orange</b></span> is worse, and darker means further from usual. The long orange runs around 2002-03, 2006-08 and 2018-20 are the drought years.</p>
-  <div class="chart" id="c10"></div>
+  
+  <div class="stats">
+    <div><b>46%</b><span>of a normal harvest, on average, in 2002-03</span></div>
+    <div><b>48%</b><span>of a normal harvest, on average, in 2006-07</span></div>
+      </div>
+  </div><div class="chart" id="c10"></div>
   <div class="key"><span style="--c:#9ecae1">Up to 40% above usual</span><span style="--c:#3182bd">40-80% above</span><span style="--c:#fdae6b">Up to 40% below usual</span><span style="--c:#d94801">40-80% below</span></div>
 </section>
 
+<!-- STEP 11 (chart 11): CROP HEATMAP. Yield vs usual for 8 crops in 5 states (ABARES crop report). Spec: specs/11_state_crops.json. -->
 <section id="crops">
   <div class="kicker">11 &middot; Beyond wheat</div>
   <h2>Every crop feels a dry year, except the irrigated ones</h2>
@@ -130,14 +160,17 @@
   <p class="note">Yield is production divided by area planted, from ABARES state crop data. &ldquo;Typical&rdquo; is each crop's middle yield in that state across the seasons shown. Seasons from 2022-23 are ABARES estimates, and the 2026-27 forecast is left out. Only crops with at least 25 seasons of data in a state are shown.</p>
 </section>
 
+<!-- STEP 12 (chart 12): GRIDDED RAIN MAP. Whole country in 50 km squares, 4 seasons (SILO). Spec: specs/12_rain_grid_map.json. -->
 <section id="tiles">
+  <div class="side">
   <div class="kicker">12 &middot; The whole country</div>
   <h2>Zoom out: how dry was the whole continent?</h2>
   <p>The earlier maps showed farming regions. This one covers the whole country, in squares about 50 km across, and compares each square with its own usual rain during the crop season (April to October). <b>Brown</b> means less rain than usual and <b>teal</b> means more. In <b>2002-03</b> the typical square got only <b>27%</b> of its usual rain, and <b>68%</b> of squares got less than half. In <b>2010-11</b> the typical square got <b>182%</b>, but the west missed out. <b>2018-19</b> was dry again (51% of squares below half), and by <b>2022-23</b> the typical square had <b>152%</b> of its usual rain.</p>
-  <div class="chart" id="c12"></div>
+  </div><div class="chart" id="c12"></div>
   <p class="note">Rainfall: SILO gridded data (Queensland Government, built from Bureau of Meteorology stations). Each square is the average of about 100 small grid cells, compared with the 1991&ndash;2022 average for the same months. Very dry desert squares (usually under 25 mm in April to October) are left out. Thin lines mark the ABARES farming regions.</p>
 </section>
 
+<!-- CONCLUSION: what the charts show and what they do not prove -->
 <section id="close">
   <div class="kicker">What it means</div>
   <h2>Weather sets the odds, and some regions carry more risk</h2>
@@ -146,6 +179,7 @@
 
 </main>
 
+<!-- FOOTER: data sources and licences, how the page was made, AI acknowledgement, limits of the data -->
 <footer><div class="wrap">
   <div class="cols"><div>
   <h3>About the data</h3>
@@ -163,9 +197,12 @@
   </div><div>
   <h3>Reading tips</h3>
   <p>Scores of 0 to 100 compare each region with its own history. Seasons run July to June. Use the sliders and dropdowns under the charts to change the season or region. Wheat harvests exist for 12 grain-belt regions only.</p>
+  <h3>Things to keep in mind</h3>
+  <ul><li>The drought-indicator maps and charts end at 2022-23, the latest season in that dataset.</li><li>Crop charts 11 and 12 use state figures, so they show the big picture, not each paddock.</li><li>Averages hide variation: some farms did far better or worse than their region.</li></ul>
   </div></div>
 </div></footer>
 
+<!-- Loads and draws all charts (see js/main.js). The three <script> tags in <head> load Vega, Vega-Lite and vega-embed from a CDN. -->
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "WAFFLE CHART (10 x 10 grid of squares, 1 square = 1 in 100 region-seasons). Red squares = harvests below 70% of normal. Left = driest third of seasons, right = wettest third. Data: data/waffle.json (one row per square, with its column, row and whether it is red).",
   "data": {
     "url": "data/waffle.json"
   },
@@ -20,8 +22,8 @@
     }
   },
   "spec": {
-    "width": 190,
-    "height": 190,
+    "width": 225,
+    "height": 225,
     "mark": {
       "type": "rect",
       "stroke": "white",
@@ -55,14 +57,13 @@
         },
         "legend": {
           "orient": "bottom",
-          "labelExpr": "datum.label == 'true' ? 'Harvest below 70% of normal' : 'Harvest of 70% or more'",
+          "labelExpr": "datum.label == 'true' ? 'Below 70% of normal' : '70% or more'",
           "symbolType": "square"
         }
       }
     }
   },
   "spacing": 22,
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

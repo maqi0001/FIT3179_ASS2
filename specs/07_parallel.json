@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "PARALLEL COORDINATES. Each thin line is a region, joined across four 0-100 scores: Rainfall, Pasture growth, Wheat yield, Farm profit (data/parallel.json). Colour = zone. The thick black line is the average of all regions for the season chosen with the slider (parameter 'pyr'). Only regions that have all four scores are included.",
   "width": 440,
   "height": 340,
   "params": [
@@ -235,7 +237,6 @@
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

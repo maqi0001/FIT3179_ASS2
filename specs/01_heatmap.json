@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "HEATMAP (3 stacked panels = small multiples by zone: Pastoral, Wheat-Sheep, High Rainfall). Rows = regions, columns = seasons, colour = rainfall score 0-100 (brown dry, teal wet). Data: data/regions.json (AADI). The radio button is the parameter 'measure': it picks column rain_fy (whole year) or rain_win (April-October) through a 'calculate' transform. The first panel has an extra text layer that labels 2002-03, 2010-11 and 2018-19.",
   "params": [
     {
       "name": "measure",
@@ -435,7 +437,6 @@
       "x": "shared"
     }
   },
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

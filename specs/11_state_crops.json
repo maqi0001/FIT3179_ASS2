@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "HEATMAP of crop yields by state (facet by state). Rows = crops, columns = seasons, colour = yield as % of that crop's usual (middle) yield in the state. Yield = production / area from the ABARES Australian Crop Report (Sept 2026), data/state_crops.json. Each state has its own y scale so crops a state does not grow are not shown. Cotton and rice are irrigated.",
   "data": {
     "url": "data/state_crops.json"
   },
@@ -100,16 +102,10 @@
       "y": {
         "field": "crop",
         "type": "nominal",
-        "sort": [
-          "Wheat",
-          "Barley",
-          "Canola",
-          "Oats",
-          "Chickpeas",
-          "Sorghum (summer)",
-          "Cotton (irrigated)",
-          "Rice (irrigated)"
-        ],
+        "sort": {
+          "field": "ord",
+          "op": "min"
+        },
         "title": null,
         "axis": {
           "ticks": false,
@@ -179,10 +175,9 @@
   },
   "resolve": {
     "scale": {
-      "y": "shared"
+      "y": "independent"
     }
   },
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {

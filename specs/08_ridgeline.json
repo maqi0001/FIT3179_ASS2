@@ -1,4 +1,6 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "RIDGELINE (layered density curves). Each curve is a smoothed distribution ('density' transform) of wheat harvest as % of the region's usual harvest, split by rainfall class (driest, middle, wettest third of seasons). Data: data/ridge.json. Curves are offset vertically by hand; the dashed rule marks 100% (a normal harvest).",
   "width": 500,
   "height": 290,
   "data": {
@@ -346,7 +348,6 @@
       }
     }
   ],
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
