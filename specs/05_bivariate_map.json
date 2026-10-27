@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "BIVARIATE CHOROPLETH. Each region gets one of 9 colours from two variables ranked within the region's own history: crop-season rain (A wettest ... C driest) and wheat harvest (1 best ... 3 worst). The code such as 'C3' is precomputed in data/wide.json (fields bv1991 ... bv2023); parameter 'byr' is set by the slider. The small square on the right is a hand-built colour key made from inline data.",
+  "description": "BIVARIATE CHOROPLETH. Each region gets one of 9 colours from two variables ranked within the region's own history: crop-season rain (A wettest ... C driest) and wheat harvest (1 best ... 3 worst). The code such as 'C3' is precomputed in data/wide.json (fields bv1991 ... bv2023); parameter 'byr' is set by the slider. The small square on the right is a hand-built colour key made from inline data; its axis labels state the score ranges (wet/good 67-100, middle 33-67, dry/poor 0-33).",
   "params": [
     {
       "name": "byr",
@@ -9,8 +9,8 @@
   ],
   "hconcat": [
     {
-      "width": 400,
-      "height": 400,
+      "width": 340,
+      "height": 340,
       "projection": {
         "type": "conicEqualArea",
         "parallels": [
@@ -171,10 +171,14 @@
     },
     {
       "title": {
-        "text": "Colour key",
+        "text": [
+          "Colour key",
+          "(scores run 0 to 100)"
+        ],
         "fontSize": 11,
         "anchor": "start",
-        "offset": 14
+        "offset": 10,
+        "lineHeight": 13
       },
       "width": 105,
       "height": 105,
@@ -238,9 +242,13 @@
           "type": "ordinal",
           "title": "Rain: wetter \u2192 drier",
           "axis": {
-            "labels": false,
             "ticks": false,
-            "domain": false
+            "domain": false,
+            "labelAngle": 0,
+            "labelFontSize": 10,
+            "titleFontSize": 11,
+            "titleFontWeight": "normal",
+            "labelExpr": "datum.value == 0 ? ['Wet', '67-100'] : datum.value == 1 ? ['Middle', '33-67'] : ['Dry', '0-33']"
           }
         },
         "y": {
@@ -249,9 +257,14 @@
           "sort": "descending",
           "title": "Harvest: better \u2192 worse",
           "axis": {
-            "labels": false,
             "ticks": false,
-            "domain": false
+            "domain": false,
+            "labelAngle": 0,
+            "labelFontSize": 10,
+            "titleFontSize": 11,
+            "titleFontWeight": "normal",
+            "labelPadding": 4,
+            "labelExpr": "datum.value == 0 ? ['Good', '67-100'] : datum.value == 1 ? ['Middle', '33-67'] : ['Poor', '0-33']"
           }
         },
         "color": {

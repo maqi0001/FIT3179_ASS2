@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "PROPORTIONAL SYMBOL MAP. One circle per grain-belt region, placed at the region's centre point. Circle area (sqrt scale) = wheat lost in dry years = average harvest in the wettest third of seasons minus the driest third (t/ha). Data: data/summary.json. The grey base map is the region TopoJSON; three small text layers label the biggest and smallest loss.",
+  "description": "PROPORTIONAL SYMBOL MAP. One circle per grain-belt region, placed at the region's centre point. Circle area is binned into four size classes (under 0.5, 0.5 to 1.0, 1.0 to 1.5, 1.5 or more tonnes per hectare; threshold scale) = wheat lost in dry years = average harvest in the wettest third of seasons minus the driest third (t/ha). Data: data/summary.json. The grey base map is the region TopoJSON; three small text layers label the biggest and smallest loss.",
   "width": 520,
   "height": 470,
   "projection": {
@@ -54,27 +54,32 @@
         "size": {
           "field": "penalty",
           "type": "quantitative",
-          "title": "Wheat lost in dry years (t/ha)",
+          "title": [
+            "Wheat lost in dry years",
+            "(tonnes per hectare)"
+          ],
           "scale": {
-            "type": "sqrt",
-            "range": [
-              60,
-              1300
-            ],
+            "type": "threshold",
             "domain": [
-              0,
-              2.6
+              0.5,
+              1.0,
+              1.5
+            ],
+            "range": [
+              300,
+              750,
+              1300,
+              2000
             ]
           },
           "legend": {
             "orient": "bottom-left",
-            "format": ".1f",
-            "values": [
-              0.5,
-              1,
-              2
-            ],
-            "offset": 4
+            "offset": -12,
+            "direction": "horizontal",
+            "columnPadding": 14,
+            "symbolFillColor": "#c0392b",
+            "symbolOpacity": 0.7,
+            "labelExpr": "['0 to 0.5', '0.5 to 1.0', '1.0 to 1.5', '1.5 or more'][datum.index]"
           }
         },
         "tooltip": [

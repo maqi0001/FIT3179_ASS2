@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "SLOPE CHART. Each line is one grain-belt region, from its usual (middle) harvest on the left to its harvest in the chosen dry season on the right. Data: data/slope.json. Parameter 'pickseason' is set by the slider. Colour is a threshold scale on % of usual harvest (under 40 red, 40-70 orange, 70 and over blue). The third layer labels regions below 45% and spaces the labels apart ('rank' window transform).",
+  "description": "SLOPE CHART. Each line is one grain-belt region, from its usual (middle) harvest on the left to its harvest in the chosen dry season on the right. Data: data/slope.json. Parameter 'pickseason' is set by the slider. Colour is a threshold scale on % of usual harvest (under 40 red, 40-70 orange, 70 and over blue). Region names are not printed (they would crowd the right side); hover a point to see the name in the tooltip. The third layer is a small italic reading hint.",
   "width": 320,
   "height": 340,
   "params": [
@@ -109,62 +109,6 @@
       }
     },
     {
-      "transform": [
-        {
-          "filter": "datum.point == 'The dry season' && datum.kept < 45"
-        },
-        {
-          "window": [
-            {
-              "op": "rank",
-              "as": "rk"
-            }
-          ],
-          "sort": [
-            {
-              "field": "yield"
-            }
-          ]
-        },
-        {
-          "joinaggregate": [
-            {
-              "op": "count",
-              "as": "n"
-            },
-            {
-              "op": "mean",
-              "field": "yield",
-              "as": "mid"
-            }
-          ]
-        },
-        {
-          "calculate": "datum.mid + (datum.rk - (datum.n + 1) / 2) * 0.11",
-          "as": "ylab"
-        }
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "dx": 10,
-        "fontSize": 10
-      },
-      "encoding": {
-        "y": {
-          "field": "ylab",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "region",
-          "type": "nominal"
-        },
-        "color": {
-          "value": "#444"
-        }
-      }
-    },
-    {
       "data": {
         "values": [
           {
@@ -180,7 +124,7 @@
         "color": "#555",
         "lineHeight": 13,
         "text": [
-          "Each line is one region.",
+          "Each line is one region (hover to see its name).",
           "Steeper fall = bigger loss"
         ]
       },
