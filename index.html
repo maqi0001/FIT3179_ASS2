@@ -155,7 +155,15 @@
 <section id="crops">
   <div class="kicker">11 &middot; Beyond wheat</div>
   <h2>Every crop feels a dry year, except the irrigated ones</h2>
+  <div class="lede">
   <p>So far we have followed wheat. This chart asks whether other crops suffer too. Each row is a crop and each column a season, in five states. <b>Brown</b> means a poor yield compared with that crop's usual yield in the state, <b>teal</b> a good one. The dry seasons of <b>2002-03</b> and <b>2006-07</b> turn the winter crops brown in New South Wales and Victoria (and partly South Australia): wheat, barley, canola, oats and chickpeas fail together. The <b>irrigated crops</b>, cotton and rice, hardly change, because they are watered from dams and rivers rather than from the sky. Western Australia often runs the other way: <b>2010-11</b>, a wet year in the east, was a poor one there.</p>
+  <div class="stats">
+    <div><b>32%</b><span>of its usual wheat yield in Victoria, 2002-03</span></div>
+    <div><b>34%</b><span>of its usual wheat yield in New South Wales, 2006-07</span></div>
+    <div><b>99%</b><span>of its usual yield for irrigated cotton in New South Wales, 2002-03: almost no change</span></div>
+    <div><b>61%</b><span>of its usual wheat yield in Western Australia, 2010-11, a wet year in the east</span></div>
+  </div>
+  </div>
   <div class="chart" id="c11"></div>
   <p class="note">Yield is production divided by area planted, from ABARES state crop data. &ldquo;Typical&rdquo; is each crop's middle yield in that state across the seasons shown. Seasons from 2022-23 are ABARES estimates, and the 2026-27 forecast is left out. Only crops with at least 25 seasons of data in a state are shown.</p>
 </section>
@@ -166,6 +174,12 @@
   <div class="kicker">12 &middot; The whole country</div>
   <h2>Zoom out: how dry was the whole continent?</h2>
   <p>The earlier maps showed farming regions. This one covers the whole country, in squares about 50 km across, and compares each square with its own usual rain during the crop season (April to October). <b>Brown</b> means less rain than usual and <b>teal</b> means more. In <b>2002-03</b> the typical square got only <b>27%</b> of its usual rain, and <b>68%</b> of squares got less than half. In <b>2010-11</b> the typical square got <b>182%</b>, but the west missed out. <b>2018-19</b> was dry again (51% of squares below half), and by <b>2022-23</b> the typical square had <b>152%</b> of its usual rain.</p>
+  <div class="stats">
+    <div><b>27%</b><span>of its usual rain for the typical square in 2002-03</span></div>
+    <div><b>68%</b><span>of squares got less than half their usual rain in 2002-03</span></div>
+    <div><b>182%</b><span>of usual rain for the typical square in 2010-11, but the west missed out</span></div>
+    <div><b>152%</b><span>of usual rain for the typical square in 2022-23</span></div>
+  </div>
   </div><div class="chart" id="c12"></div>
   <p class="note">Rainfall: SILO gridded data (Queensland Government, built from Bureau of Meteorology stations). Each square is the average of about 100 small grid cells, compared with the 1991&ndash;2022 average for the same months. Very dry desert squares (usually under 25 mm in April to October) are left out. Thin lines mark the ABARES farming regions.</p>
 </section>
@@ -174,7 +188,13 @@
 <section id="close">
   <div class="kicker">What it means</div>
   <h2>Weather sets the odds, and some regions carry more risk</h2>
+  <div class="lede">
   <p>Across the grain belt, the wettest seasons delivered above-normal harvests and the driest seasons often delivered less than two thirds of a normal crop. The cost is not shared evenly: the western wheat belt and the eastern grain regions did not always dry out in the same seasons, and some regions give up much more wheat than others when rain fails. These charts show a strong link between rain and harvest. They do not prove rain is the only cause, because prices, pests and farming methods matter too.</p>
+  <div class="stats">
+    <div><b>55 in 100</b><span>regional harvests fell below 70% of normal in the driest third of seasons</span></div>
+    <div><b>2 in 100</b><span>did so in the wettest third of seasons</span></div>
+  </div>
+  </div>
 </section>
 
 </main>
@@ -193,7 +213,7 @@
   </ul>
   </div><div>
   <h3>How it was made</h3>
-  <p>Charts are written in <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. Each chart's specification is in the <code>specs</code> folder of this site's repository and its data is in <code>data</code>. Designed and written by Muhammad Aqila, October 2026. AI assistance (Claude, by Anthropic) was used to help write code and text; see submission notes.</p>
+  <p>Charts are written in <a href="https://vega.github.io/vega-lite/">Vega-Lite</a>. Each chart's specification is in the <code>specs</code> folder of this site's repository and its data is in <code>data</code>. Chart specifications (JSON): <a href="specs/01_heatmap.json">1</a> <a href="specs/02_choropleth.json">2</a> <a href="specs/03_connected_scatter.json">3</a> <a href="specs/04_slope.json">4</a> <a href="specs/05_bivariate_map.json">5</a> <a href="specs/06_symbol_map.json">6</a> <a href="specs/07_parallel.json">7</a> <a href="specs/08_ridgeline.json">8</a> <a href="specs/09_waffle.json">9</a> <a href="specs/10_horizon.json">10</a> <a href="specs/11_state_crops.json">11</a> <a href="specs/12_rain_grid_map.json">12</a>. Designed and written by Muhammad Aqila, October 2026. AI assistance (Claude, by Anthropic) was used to help write code and text; see submission notes.</p>
   </div><div>
   <h3>Reading tips</h3>
   <p>Scores of 0 to 100 compare each region with its own history. Seasons run July to June. Use the sliders and dropdowns under the charts to change the season or region. Wheat harvests exist for 12 grain-belt regions only.</p>

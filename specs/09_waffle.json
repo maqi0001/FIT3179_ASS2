@@ -17,7 +17,8 @@
         "labelFontSize": 13,
         "labelFontWeight": "bold",
         "labelOrient": "bottom",
-        "labelPadding": 8
+        "labelPadding": 8,
+        "labelExpr": "datum.value == 'Driest third of years' ? [datum.value, '55 in 100 below 70% of normal'] : [datum.value, '2 in 100 below 70% of normal']"
       }
     }
   },

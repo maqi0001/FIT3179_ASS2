@@ -32,11 +32,6 @@
     "height": {
       "step": 16
     },
-    "mark": {
-      "type": "rect",
-      "stroke": "white",
-      "strokeWidth": 0.5
-    },
     "encoding": {
       "x": {
         "field": "season",
@@ -112,66 +107,163 @@
           "domain": false,
           "labelLimit": 160
         }
-      },
-      "color": {
-        "field": "pct",
-        "type": "quantitative",
-        "title": "Yield vs typical (%)",
-        "scale": {
-          "domain": [
-            0,
-            50,
-            100,
-            150,
-            200
-          ],
-          "range": [
-            "#7a3f06",
-            "#d9a85a",
-            "#f4efe3",
-            "#6fc3b6",
-            "#015a52"
-          ],
-          "clamp": true
+      }
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "rect",
+          "stroke": "white",
+          "strokeWidth": 0.5
         },
-        "legend": {
-          "values": [
-            0,
-            50,
-            100,
-            150,
-            200
-          ],
-          "orient": "bottom",
-          "direction": "horizontal",
-          "gradientLength": 280,
-          "format": "d"
+        "encoding": {
+          "color": {
+            "field": "pct",
+            "type": "quantitative",
+            "title": "Yield vs typical (%)",
+            "scale": {
+              "domain": [
+                0,
+                50,
+                100,
+                150,
+                200
+              ],
+              "range": [
+                "#7a3f06",
+                "#d9a85a",
+                "#f4efe3",
+                "#6fc3b6",
+                "#015a52"
+              ],
+              "clamp": true
+            },
+            "legend": {
+              "values": [
+                0,
+                50,
+                100,
+                150,
+                200
+              ],
+              "orient": "bottom",
+              "direction": "horizontal",
+              "gradientLength": 280,
+              "format": "d"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "state",
+              "title": "State"
+            },
+            {
+              "field": "crop",
+              "title": "Crop"
+            },
+            {
+              "field": "season",
+              "title": "Season"
+            },
+            {
+              "field": "pct",
+              "title": "% of typical yield"
+            },
+            {
+              "field": "yield",
+              "title": "Yield (t/ha)",
+              "format": ".2f"
+            }
+          ]
         }
       },
-      "tooltip": [
-        {
-          "field": "state",
-          "title": "State"
+      {
+        "transform": [
+          {
+            "filter": "datum.state == 'Victoria' && datum.crop == 'Wheat' && (datum.season == '2002-03' || datum.season == '2006-07')"
+          }
+        ],
+        "mark": {
+          "type": "rect",
+          "fill": null,
+          "stroke": "#222",
+          "strokeWidth": 1.6
         },
-        {
-          "field": "crop",
-          "title": "Crop"
-        },
-        {
-          "field": "season",
-          "title": "Season"
-        },
-        {
-          "field": "pct",
-          "title": "% of typical yield"
-        },
-        {
-          "field": "yield",
-          "title": "Yield (t/ha)",
-          "format": ".2f"
+        "encoding": {
+          "y": {
+            "value": 0
+          },
+          "y2": {
+            "value": 80
+          }
         }
-      ]
-    }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.state == 'Victoria' && datum.crop == 'Wheat' && datum.season == '2004-05'"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 11,
+          "fontWeight": "bold",
+          "color": "#222",
+          "baseline": "bottom",
+          "text": "Outlined: winter crops fail together"
+        },
+        "encoding": {
+          "y": {
+            "value": -3
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.state == 'New South Wales' && datum.season == '2022-23' && (datum.crop == 'Cotton (irrigated)' || datum.crop == 'Rice (irrigated)')"
+          }
+        ],
+        "mark": {
+          "type": "rect",
+          "fill": null,
+          "stroke": "#222",
+          "strokeWidth": 1.6
+        },
+        "encoding": {
+          "x": {
+            "value": 0
+          },
+          "x2": {
+            "value": 690
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.state == 'New South Wales' && datum.season == '2022-23' && datum.crop == 'Wheat'"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 11,
+          "fontWeight": "bold",
+          "color": "#222",
+          "baseline": "bottom",
+          "align": "right",
+          "text": "Outlined: irrigated crops barely change"
+        },
+        "encoding": {
+          "x": {
+            "value": 690
+          },
+          "y": {
+            "value": -3
+          }
+        }
+      }
+    ]
   },
   "resolve": {
     "scale": {

@@ -163,6 +163,38 @@
           "value": "#444"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#555",
+        "lineHeight": 13,
+        "text": [
+          "Each line is one region.",
+          "Steeper fall = bigger loss"
+        ]
+      },
+      "encoding": {
+        "x": {
+          "value": 160
+        },
+        "y": {
+          "value": 318
+        },
+        "color": {
+          "value": "#555"
+        }
+      }
     }
   ],
   "config": {

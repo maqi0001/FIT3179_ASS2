@@ -113,6 +113,40 @@
             "strokeWidth": 0.4,
             "opacity": 0.7
           }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 111,
+                "lat": -41
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "color": "#333",
+            "fontWeight": "bold",
+            "text": [
+              "Brown almost everywhere:",
+              "the typical square got",
+              "27% of its usual rain"
+            ]
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
         }
       ]
     },
@@ -226,6 +260,39 @@
             "stroke": "#8a8478",
             "strokeWidth": 0.4,
             "opacity": 0.7
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 111,
+                "lat": -41
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "color": "#333",
+            "fontWeight": "bold",
+            "text": [
+              "Teal across the east,",
+              "brown in the far west"
+            ]
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
           }
         }
       ]
@@ -341,6 +408,40 @@
             "strokeWidth": 0.4,
             "opacity": 0.7
           }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 111,
+                "lat": -41
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "color": "#333",
+            "fontWeight": "bold",
+            "text": [
+              "Dry again across the east:",
+              "51% of squares got",
+              "less than half their usual rain"
+            ]
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
+          }
         }
       ]
     },
@@ -454,6 +555,40 @@
             "stroke": "#8a8478",
             "strokeWidth": 0.4,
             "opacity": 0.7
+          }
+        },
+        {
+          "data": {
+            "values": [
+              {
+                "lon": 111,
+                "lat": -41
+              }
+            ]
+          },
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "baseline": "top",
+            "fontSize": 10.5,
+            "lineHeight": 12.5,
+            "color": "#333",
+            "fontWeight": "bold",
+            "text": [
+              "A wet year: the typical",
+              "square got 152% of",
+              "its usual rain"
+            ]
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            }
           }
         }
       ]
