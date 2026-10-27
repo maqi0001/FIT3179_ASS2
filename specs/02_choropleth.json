@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "CHOROPLETH MAP of the ABARES farming regions coloured by rainfall score. Geometry: data/aagis_regions.topojson. Rainfall: data/wide.json, which has one column per season (rf1991 ... rf2023); a 'lookup' joins it to the map by region code and 'calculate' picks the column for the chosen season. Parameter 'yr' (season end year) is set by the slider added in js/main.js. Projection: conicEqualArea centred on Australia.",
+  "description": "CHOROPLETH MAP of the ABARES farming regions coloured by rainfall score. Geometry: data/aagis_regions.topojson. Rainfall: data/wide.json, which has one column per season (rf1991 ... rf2023); a 'lookup' joins it to the map by region code and 'calculate' picks the column for the chosen season. Parameter 'yr' (season end year) is set by the slider added in js/main.js. Projection: conicEqualArea centred on Australia. The 8 capital cities are small dots with white-haloed labels (function city_layers, inline data, no extra dataset).",
   "width": 520,
   "height": 420,
   "params": [
@@ -21,151 +21,795 @@
       0
     ]
   },
-  "data": {
-    "url": "data/aagis_regions.topojson",
-    "format": {
-      "type": "topojson",
-      "feature": "aagis"
-    }
-  },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.aagis",
-      "from": {
-        "data": {
-          "url": "data/wide.json"
+      "data": {
+        "url": "data/aagis_regions.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "aagis"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.aagis",
+          "from": {
+            "data": {
+              "url": "data/wide.json"
+            },
+            "key": "code",
+            "fields": [
+              "name",
+              "rf1991",
+              "rf1992",
+              "rf1993",
+              "rf1994",
+              "rf1995",
+              "rf1996",
+              "rf1997",
+              "rf1998",
+              "rf1999",
+              "rf2000",
+              "rf2001",
+              "rf2002",
+              "rf2003",
+              "rf2004",
+              "rf2005",
+              "rf2006",
+              "rf2007",
+              "rf2008",
+              "rf2009",
+              "rf2010",
+              "rf2011",
+              "rf2012",
+              "rf2013",
+              "rf2014",
+              "rf2015",
+              "rf2016",
+              "rf2017",
+              "rf2018",
+              "rf2019",
+              "rf2020",
+              "rf2021",
+              "rf2022",
+              "rf2023",
+              "tf1991",
+              "tf1992",
+              "tf1993",
+              "tf1994",
+              "tf1995",
+              "tf1996",
+              "tf1997",
+              "tf1998",
+              "tf1999",
+              "tf2000",
+              "tf2001",
+              "tf2002",
+              "tf2003",
+              "tf2004",
+              "tf2005",
+              "tf2006",
+              "tf2007",
+              "tf2008",
+              "tf2009",
+              "tf2010",
+              "tf2011",
+              "tf2012",
+              "tf2013",
+              "tf2014",
+              "tf2015",
+              "tf2016",
+              "tf2017",
+              "tf2018",
+              "tf2019",
+              "tf2020",
+              "tf2021",
+              "tf2022",
+              "tf2023"
+            ]
+          }
         },
-        "key": "code",
-        "fields": [
-          "name",
-          "rf1991",
-          "rf1992",
-          "rf1993",
-          "rf1994",
-          "rf1995",
-          "rf1996",
-          "rf1997",
-          "rf1998",
-          "rf1999",
-          "rf2000",
-          "rf2001",
-          "rf2002",
-          "rf2003",
-          "rf2004",
-          "rf2005",
-          "rf2006",
-          "rf2007",
-          "rf2008",
-          "rf2009",
-          "rf2010",
-          "rf2011",
-          "rf2012",
-          "rf2013",
-          "rf2014",
-          "rf2015",
-          "rf2016",
-          "rf2017",
-          "rf2018",
-          "rf2019",
-          "rf2020",
-          "rf2021",
-          "rf2022",
-          "rf2023",
-          "tf1991",
-          "tf1992",
-          "tf1993",
-          "tf1994",
-          "tf1995",
-          "tf1996",
-          "tf1997",
-          "tf1998",
-          "tf1999",
-          "tf2000",
-          "tf2001",
-          "tf2002",
-          "tf2003",
-          "tf2004",
-          "tf2005",
-          "tf2006",
-          "tf2007",
-          "tf2008",
-          "tf2009",
-          "tf2010",
-          "tf2011",
-          "tf2012",
-          "tf2013",
-          "tf2014",
-          "tf2015",
-          "tf2016",
-          "tf2017",
-          "tf2018",
-          "tf2019",
-          "tf2020",
-          "tf2021",
-          "tf2022",
-          "tf2023"
+        {
+          "calculate": "datum['rf'+yr]",
+          "as": "rain"
+        },
+        {
+          "calculate": "datum['tf'+yr]",
+          "as": "tip"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "color": {
+          "field": "rain",
+          "type": "quantitative",
+          "title": "Rainfall (0-100)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "range": [
+              "#8c510a",
+              "#f6e8c3",
+              "#c7eae5",
+              "#01665e"
+            ]
+          },
+          "legend": {
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ],
+            "gradientLength": 240,
+            "orient": "bottom",
+            "direction": "horizontal"
+          },
+          "condition": {
+            "test": "!isValid(datum.rain)",
+            "value": "#e6e1d8"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Region"
+          },
+          {
+            "field": "tip",
+            "title": "How wet?"
+          }
         ]
       }
     },
     {
-      "calculate": "datum['rf'+yr]",
-      "as": "rain"
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 115.86
+        },
+        "latitude": {
+          "datum": -31.95
+        }
+      }
     },
     {
-      "calculate": "datum['tf'+yr]",
-      "as": "tip"
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Perth",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 115.86
+        },
+        "latitude": {
+          "datum": -31.95
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Perth",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 115.86
+        },
+        "latitude": {
+          "datum": -31.95
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 138.6
+        },
+        "latitude": {
+          "datum": -34.93
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Adelaide",
+        "align": "right",
+        "dx": -6,
+        "dy": 2,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 138.6
+        },
+        "latitude": {
+          "datum": -34.93
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Adelaide",
+        "align": "right",
+        "dx": -6,
+        "dy": 2,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 138.6
+        },
+        "latitude": {
+          "datum": -34.93
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 144.96
+        },
+        "latitude": {
+          "datum": -37.81
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Melbourne",
+        "align": "right",
+        "dx": -6,
+        "dy": 4,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 144.96
+        },
+        "latitude": {
+          "datum": -37.81
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Melbourne",
+        "align": "right",
+        "dx": -6,
+        "dy": 4,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 144.96
+        },
+        "latitude": {
+          "datum": -37.81
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 151.21
+        },
+        "latitude": {
+          "datum": -33.87
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Sydney",
+        "align": "left",
+        "dx": 6,
+        "dy": -2,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 151.21
+        },
+        "latitude": {
+          "datum": -33.87
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Sydney",
+        "align": "left",
+        "dx": 6,
+        "dy": -2,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 151.21
+        },
+        "latitude": {
+          "datum": -33.87
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 149.13
+        },
+        "latitude": {
+          "datum": -35.28
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Canberra",
+        "align": "right",
+        "dx": -6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 149.13
+        },
+        "latitude": {
+          "datum": -35.28
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Canberra",
+        "align": "right",
+        "dx": -6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 149.13
+        },
+        "latitude": {
+          "datum": -35.28
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 153.03
+        },
+        "latitude": {
+          "datum": -27.47
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Brisbane",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 153.03
+        },
+        "latitude": {
+          "datum": -27.47
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Brisbane",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 153.03
+        },
+        "latitude": {
+          "datum": -27.47
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 147.33
+        },
+        "latitude": {
+          "datum": -42.88
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Hobart",
+        "align": "left",
+        "dx": 6,
+        "dy": 2,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 147.33
+        },
+        "latitude": {
+          "datum": -42.88
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Hobart",
+        "align": "left",
+        "dx": 6,
+        "dy": 2,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 147.33
+        },
+        "latitude": {
+          "datum": -42.88
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 14,
+        "color": "#222",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 130.95
+        },
+        "latitude": {
+          "datum": -13.35
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Darwin",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "stroke": "white",
+        "strokeWidth": 3,
+        "color": "white",
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 130.95
+        },
+        "latitude": {
+          "datum": -13.35
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "a": 1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "text": "Darwin",
+        "align": "left",
+        "dx": 6,
+        "dy": 0,
+        "fontSize": 9.5,
+        "color": "#222",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "datum": 130.95
+        },
+        "latitude": {
+          "datum": -13.35
+        }
+      }
     }
   ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white",
-    "strokeWidth": 0.6
-  },
-  "encoding": {
-    "color": {
-      "field": "rain",
-      "type": "quantitative",
-      "title": "Rainfall (0-100)",
-      "scale": {
-        "domain": [
-          0,
-          100
-        ],
-        "range": [
-          "#8c510a",
-          "#f6e8c3",
-          "#c7eae5",
-          "#01665e"
-        ]
-      },
-      "legend": {
-        "values": [
-          0,
-          25,
-          50,
-          75,
-          100
-        ],
-        "gradientLength": 240,
-        "orient": "bottom",
-        "direction": "horizontal"
-      },
-      "condition": {
-        "test": "!isValid(datum.rain)",
-        "value": "#e6e1d8"
-      }
-    },
-    "tooltip": [
-      {
-        "field": "properties.name",
-        "title": "Region"
-      },
-      {
-        "field": "tip",
-        "title": "How wet?"
-      }
-    ]
-  },
   "config": {
     "font": "Source Sans 3, Helvetica, Arial, sans-serif",
     "axis": {
